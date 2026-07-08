@@ -18,17 +18,18 @@
 </script>
 <style>
 :root{
-  --deep:#152228;
-  --deep-2:#1C2E35;
-  --ink:#24333B;
-  --paper:#F2F3EF;
-  --card:#FBFBF7;
-  --sage:#7FA08F;
-  --sage-deep:#43635A;
-  --brass:#C4A265;
-  --brass-soft:#D9BE8C;
-  --line:rgba(36,51,59,.14);
-  --line-light:rgba(242,243,239,.16);
+  --deep:#2B3B34;
+  --deep-2:#35473F;
+  --ink:#33403A;
+  --paper:#F6F2EA;
+  --card:#FCFAF4;
+  --sage:#8FA893;
+  --sage-deep:#556F5F;
+  --brass:#C08552;
+  --brass-soft:#DDB988;
+  --rose:#C68B7B;
+  --line:rgba(51,64,58,.14);
+  --line-light:rgba(246,242,234,.16);
   --serif:'Cormorant Garamond',Georgia,serif;
   --sans:'Commissioner',system-ui,sans-serif;
   --ease:cubic-bezier(.22,.8,.28,1);
@@ -173,18 +174,39 @@ h2.title{font-size:clamp(2.1rem,5vw,3.4rem);margin:16px 0 0;color:var(--ink)}
 .btn-dark{background:var(--deep);color:var(--paper)}
 .btn-dark:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(21,34,40,.3);background:var(--deep-2)}
 
-/* ---------- bio ---------- */
-.bio-grid{display:grid;grid-template-columns:.95fr 1.25fr;gap:clamp(44px,6vw,100px);align-items:start;margin-top:clamp(44px,6vw,70px)}
-.pframe{position:relative;cursor:zoom-in}
-.pframe::before{content:'';position:absolute;inset:0;transform:translate(20px,20px);border:1px solid var(--brass);border-radius:20px;transition:transform .5s var(--ease);z-index:0}
-.pframe:hover::before{transform:translate(12px,12px)}
-.pframe img{position:relative;z-index:1;border-radius:20px;width:100%;aspect-ratio:4/5;object-fit:cover;box-shadow:0 30px 70px rgba(21,34,40,.22);transition:transform .6s var(--ease)}
-.pframe:hover img{transform:scale(1.015)}
-.pframe .zoom{position:absolute;z-index:2;right:16px;bottom:16px;width:44px;height:44px;border-radius:50%;background:rgba(21,34,40,.72);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;transition:background .3s}
+/* ---------- tulip motif (from her card) ---------- */
+.tulip{position:absolute;pointer-events:none;z-index:0}
+.tulip svg{width:100%;height:100%;overflow:visible}
+.tulip path{fill:none;stroke:var(--sage-deep);stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round;opacity:.5}
+.tulip.draw path{stroke-dasharray:var(--len);stroke-dashoffset:var(--len);transition:stroke-dashoffset 2.4s var(--ease)}
+.tulip.draw.in path{stroke-dashoffset:0}
+.tulip.light path{stroke:var(--brass-soft);opacity:.34}
+
+/* ---------- bio (symmetric, parallax) ---------- */
+.bio-sec{background:linear-gradient(180deg,var(--card) 0%,var(--paper) 100%);position:relative;overflow:hidden}
+.bio-head{text-align:center;max-width:720px;margin:0 auto;position:relative;z-index:2}
+.bio-head .eyebrow{justify-content:center}
+.bio-head .eyebrow::after{content:'';width:36px;height:1px;background:var(--brass)}
+.bio-head .tline{margin-left:auto;margin-right:auto}
+.bio-hero{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:clamp(30px,5vw,72px);margin:clamp(48px,7vw,80px) auto 0;max-width:1060px;position:relative;z-index:2}
+.bio-hero .intro{font-family:var(--serif);font-size:clamp(1.25rem,2.4vw,1.7rem);font-style:italic;line-height:1.5;color:var(--sage-deep)}
+.bio-hero .intro.right{text-align:right}
+.bio-hero .signoff{margin-top:22px;font-family:var(--serif);font-style:normal;font-size:1.02rem;letter-spacing:.02em;color:var(--ink);display:flex;flex-direction:column;gap:2px}
+.bio-hero .signoff.right{align-items:flex-end}
+.bio-hero .signoff .role{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--brass);font-family:var(--sans);font-weight:500}
+.pframe{position:relative;cursor:zoom-in;width:clamp(230px,30vw,320px)}
+.pframe::before{content:'';position:absolute;inset:0;transform:translate(0,0) scale(1.06);border:1px solid var(--brass);border-radius:200px 200px 18px 18px;transition:transform .6s var(--ease);z-index:0}
+.pframe:hover::before{transform:translate(0,-6px) scale(1.06)}
+.pframe img{position:relative;z-index:1;border-radius:190px 190px 14px 14px;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;box-shadow:0 30px 70px rgba(43,59,52,.24);transition:transform .6s var(--ease)}
+.pframe:hover img{transform:scale(1.012)}
+.pframe .zoom{position:absolute;z-index:2;right:14px;bottom:14px;width:44px;height:44px;border-radius:50%;background:rgba(43,59,52,.78);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;transition:background .3s}
 .pframe:hover .zoom{background:var(--brass)}
 .pframe .zoom svg{width:19px;height:19px;stroke:#fff;stroke-width:2;fill:none}
-.bio-txt p{margin-bottom:1.35em}
-.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 30px}
+.bio-body{max-width:820px;margin:clamp(56px,8vw,90px) auto 0;position:relative;z-index:2;column-gap:clamp(40px,5vw,64px)}
+.bio-body p{margin-bottom:1.35em}
+.bio-body p:first-of-type::first-letter{font-family:var(--serif);font-size:3.4em;float:left;line-height:.82;padding:6px 12px 0 0;color:var(--brass)}
+.bio-parallax{position:absolute;left:50%;top:0;transform:translateX(-50%);width:min(1200px,96vw);height:100%;z-index:1;pointer-events:none}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 30px;justify-content:center}
 .chip{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;color:var(--sage-deep);border:1px solid rgba(67,99,90,.35);padding:8px 16px;border-radius:100px;background:rgba(127,160,143,.08);transition:background .3s,color .3s,transform .3s}
 .chip:hover{background:var(--sage-deep);color:#fff;transform:translateY(-2px)}
 
@@ -270,12 +292,16 @@ footer{background:#0F1A1F;color:rgba(242,243,239,.6);padding:60px clamp(22px,5vw
 
 /* ---------- responsive ---------- */
 @media(max-width:980px){
-  .psy-grid,.bio-grid,.svc-grid,.ct-grid,.panels{grid-template-columns:1fr}
+  .psy-grid,.svc-grid,.ct-grid,.panels{grid-template-columns:1fr}
   .psy-left{position:static}
   .nav-links{display:none}
   #burger{display:block}
-  .pframe{max-width:440px}
   .mapbox{min-height:340px}
+  .bio-hero{grid-template-columns:1fr;text-align:center;max-width:560px}
+  .bio-hero .intro,.bio-hero .intro.right{text-align:center;order:2}
+  .bio-hero .signoff,.bio-hero .signoff.right{align-items:center}
+  .pframe{order:1;margin:0 auto;width:min(280px,72vw)}
+  .bio-hero .b-first{order:2}.bio-hero .b-last{order:3}
 }
 @media(max-width:560px){
   body{font-size:15.5px}
@@ -354,10 +380,69 @@ footer{background:#0F1A1F;color:rgba(242,243,239,.6);padding:60px clamp(22px,5vw
 
 <!-- ================= QUOTE 1 ================= -->
 <section class="quote-band">
-  <svg class="qband-orn" viewBox="0 0 64 64" fill="none"><circle cx="26" cy="32" r="14" stroke="#F2F3EF" stroke-width=".7"/><circle cx="38" cy="32" r="14" stroke="#F2F3EF" stroke-width=".7"/></svg>
+  <div class="tulip light draw" style="left:-40px;top:20px;width:150px;height:260px" aria-hidden="true"><svg viewBox="0 0 120 220" preserveAspectRatio="xMidYMax meet"><path d="M60 218 C58 180 55 150 50 120 C46 96 44 78 45 62 M45 62 C40 52 34 48 30 52 C26 56 30 64 38 66 C44 67 45 64 45 62 Z M45 62 C50 52 56 48 60 52 C64 56 60 64 52 66 C46 67 45 64 45 62 M45 62 C45 54 46 46 49 41 C52 36 57 35 59 39 C61 43 57 50 51 55 M60 218 C50 176 30 150 16 138 C6 129 4 118 8 112 M60 218 C56 172 44 138 34 118 M60 218 C66 176 82 146 96 132 C106 122 108 112 104 106 M60 218 C64 174 76 144 86 126"/></svg></div>
+  <div class="tulip light draw" style="right:-40px;bottom:20px;width:150px;height:260px;transform:scaleX(-1)" aria-hidden="true"><svg viewBox="0 0 120 220" preserveAspectRatio="xMidYMax meet"><path d="M62 218 C64 178 66 150 64 122 C62 100 60 82 58 66 M58 66 C52 55 45 50 40 55 C36 59 41 68 50 69 C56 69 58 68 58 66 Z M58 66 C64 55 72 51 76 56 C80 61 74 69 65 70 C59 70 58 68 58 66 M58 66 C58 57 60 48 63 43 C66 38 72 38 74 43 C76 48 71 56 64 60 M62 218 C50 174 28 146 14 134 C5 126 3 116 7 110 M62 218 C58 170 46 136 36 116 M62 218 C70 178 88 150 102 138 C112 130 114 120 110 114 M62 218 C66 172 80 142 90 124"/></svg></div>
   <div class="wrap">
     <p class="bigq rv" data-i="q1">Συμβαίνει να είμαστε πλάσματα γεμάτα φόβους και ψιλοδουλεμένες άμυνες. Φοβόμαστε ακόμα και την αληθινή χαρά, την ευτυχία και, ίσως περισσότερο, τη βαθιά αγάπη. Για διάφορους λόγους τις αποφεύγουμε και βάζουμε στη θέση τους στόχους και επιλογές που νιώθουμε ότι ελέγχουμε καλύτερα. Κρύβει όμως μεγάλη θλίψη και κατάθλιψη η αποφυγή της αυθεντικής, της ζωντανής ζωής.</p>
     <div class="qwho rv d2" data-i="q1w">Μάρω Βαμβουνάκη</div>
+  </div>
+</section>
+
+<!-- ================= BIO (symmetric, parallax) ================= -->
+<section id="bio" class="bio-sec">
+  <div class="bio-parallax" id="bioPar" aria-hidden="true">
+    <div class="tulip draw" style="left:2%;top:8%;width:120px;height:220px" data-speed="0.12"><svg viewBox="0 0 120 220" preserveAspectRatio="xMidYMax meet"><path d="M60 218 C58 180 55 150 50 120 C46 96 44 78 45 62 M45 62 C40 52 34 48 30 52 C26 56 30 64 38 66 C44 67 45 64 45 62 Z M45 62 C50 52 56 48 60 52 C64 56 60 64 52 66 C46 67 45 64 45 62 M45 62 C45 54 46 46 49 41 C52 36 57 35 59 39 C61 43 57 50 51 55 M60 218 C50 176 30 150 16 138 C6 129 4 118 8 112 M60 218 C56 172 44 138 34 118 M60 218 C66 176 82 146 96 132 C106 122 108 112 104 106 M60 218 C64 174 76 144 86 126"/></svg></div>
+    <div class="tulip draw" style="right:2%;top:14%;width:120px;height:220px;transform:scaleX(-1)" data-speed="-0.16"><svg viewBox="0 0 120 220" preserveAspectRatio="xMidYMax meet"><path d="M62 218 C64 178 66 150 64 122 C62 100 60 82 58 66 M58 66 C52 55 45 50 40 55 C36 59 41 68 50 69 C56 69 58 68 58 66 Z M58 66 C64 55 72 51 76 56 C80 61 74 69 65 70 C59 70 58 68 58 66 M58 66 C58 57 60 48 63 43 C66 38 72 38 74 43 C76 48 71 56 64 60 M62 218 C50 174 28 146 14 134 C5 126 3 116 7 110 M62 218 C58 170 46 136 36 116 M62 218 C70 178 88 150 102 138 C112 130 114 120 110 114 M62 218 C66 172 80 142 90 124"/></svg></div>
+    <div class="tulip draw light" style="left:8%;bottom:6%;width:90px;height:170px" data-speed="0.2"><svg viewBox="0 0 120 220" preserveAspectRatio="xMidYMax meet"><path d="M62 218 C64 178 66 150 64 122 C62 100 60 82 58 66 M58 66 C52 55 45 50 40 55 C36 59 41 68 50 69 C56 69 58 68 58 66 Z M58 66 C64 55 72 51 76 56 C80 61 74 69 65 70 C59 70 58 68 58 66 M58 66 C58 57 60 48 63 43 C66 38 72 38 74 43 C76 48 71 56 64 60 M62 218 C50 174 28 146 14 134 C5 126 3 116 7 110 M62 218 C58 170 46 136 36 116 M62 218 C70 178 88 150 102 138 C112 130 114 120 110 114 M62 218 C66 172 80 142 90 124"/></svg></div>
+    <div class="tulip draw light" style="right:8%;bottom:10%;width:90px;height:170px;transform:scaleX(-1)" data-speed="-0.1"><svg viewBox="0 0 120 220" preserveAspectRatio="xMidYMax meet"><path d="M60 218 C58 180 55 150 50 120 C46 96 44 78 45 62 M45 62 C40 52 34 48 30 52 C26 56 30 64 38 66 C44 67 45 64 45 62 Z M45 62 C50 52 56 48 60 52 C64 56 60 64 52 66 C46 67 45 64 45 62 M45 62 C45 54 46 46 49 41 C52 36 57 35 59 39 C61 43 57 50 51 55 M60 218 C50 176 30 150 16 138 C6 129 4 118 8 112 M60 218 C56 172 44 138 34 118 M60 218 C66 176 82 146 96 132 C106 122 108 112 104 106 M60 218 C64 174 76 144 86 126"/></svg></div>
+  </div>
+  <div class="wrap">
+    <div class="bio-head">
+      <span class="eyebrow rv" data-i="bio_eye">Βιογραφικό</span>
+      <h2 class="title rv d1" data-i="bio_t">Λίγα λόγια για εμένα</h2>
+      <div class="tline"></div>
+    </div>
+
+    <div class="bio-hero">
+      <div class="b-first rv-l">
+        <p class="intro right" data-i="bio_p1">Είμαι Συστημική Ψυχοθεραπεύτρια και στόχος μου είναι να δημιουργώ μια θεραπευτική σχέση εμπιστοσύνης, μέσα στην οποία κάθε άνθρωπος μπορεί να προχωρήσει με τον δικό του ρυθμό προς μια πιο ισορροπημένη και ουσιαστική ζωή.</p>
+        <div class="signoff right">
+          <span>Μαρία Μαλαπέτσα</span>
+          <span class="role" data-i="bio_role">Συστημική Ψυχοθεραπεύτρια</span>
+        </div>
+      </div>
+
+      <div class="pframe rv-scale" onclick="openLB()" role="button" tabindex="0" aria-label="Μεγέθυνση φωτογραφίας" onkeydown="if(event.key==='Enter')openLB()">
+        <img id="portrait" src="https://raw.githubusercontent.com/agelmet/MALAPETSA/refs/heads/main/picture.png" alt="Μαρία Μαλαπέτσα — Συστημική Ψυχοθεραπεύτρια" loading="lazy">
+        <span class="zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5L21 21M11 8v6M8 11h6"/></svg></span>
+      </div>
+
+      <div class="b-last rv-r">
+        <p class="intro" data-i="bio_places">Από το 2023 διατηρώ ιδιωτικό γραφείο στα Ιλίσια, όπου προσφέρω έναν χώρο εμπιστοσύνης — δια ζώσης και διαδικτυακά.</p>
+        <div class="signoff">
+          <span data-i="bio_place2">Ιλίσια · Αθήνα</span>
+          <span class="role" data-i="bio_role2">Μέλος ΕΛ.Ε.ΣΥ.Θ.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bio-body">
+      <p class="rv" data-i="bio_p2">Έχω αποφοιτήσει από το Τμήμα Φιλοσοφίας, Παιδαγωγικής και Ψυχολογίας (με Κατεύθυνση Ψυχολογίας) του Εθνικού και Καποδιστριακού Πανεπιστημίου Αθηνών, ενώ παράλληλα κατέχω Bachelor στην Κλινική Ψυχολογία από το University of Central Lancashire. Έχω ολοκληρώσει μεταπτυχιακές σπουδές στο Πάντειο Πανεπιστήμιο με ειδίκευση στον Κοινωνικό Αποκλεισμό και τις Μειονότητες και Κατεύθυνση Ψυχολογίας — ένα πεδίο που ενίσχυσε βαθιά την ευαισθησία μου γύρω από ζητήματα ταυτότητας, κοινωνικών ανισοτήτων και ψυχολογικής επιβάρυνσης ευάλωτων πληθυσμών.</p>
+      <p class="rv" data-i="bio_p3">Εκπαιδεύτηκα στη Συστημική Ψυχοθεραπεία στο Αθηναϊκό Κέντρο Μελέτης του Ανθρώπου, μέσα από την οποία προσεγγίζω τον άνθρωπο στο ευρύτερο πλαίσιο των σχέσεων και των συστημάτων στα οποία ανήκει. Παράλληλα, έχω εκπαιδευτεί σε σύγχρονες θεραπευτικές προσεγγίσεις όπως η Συγκινησιακά Εστιασμένη Θεραπεία (EFT), η Συμπονετική Διερεύνηση (Compassion Focused Approaches) και το Mindfulness — εργαλεία που ενισχύουν την κατανόηση, τη ρύθμιση του συναισθήματος και την ανάπτυξη μιας πιο συμπονετικής σχέσης με τον εαυτό.</p>
+      <p class="rv" data-i="bio_p4">Ιδιαίτερο ενδιαφέρον για εμένα αποτελούν το τραύμα και το πένθος, οι αγχώδεις και καταθλιπτικές δυσκολίες, οι κρίσεις πανικού, καθώς και τα ψυχοσωματικά συμπτώματα που συχνά εκφράζουν βαθύτερες συναισθηματικές ανάγκες. Με απασχολούν επίσης οι δυσκολίες στις διαπροσωπικές σχέσεις και οι οικογενειακές δυναμικές, όπως και η ενδυνάμωση του ατόμου μέσα από μια διαδικασία προσωπικής ανάπτυξης και αυτογνωσίας.</p>
+      <p class="rv" data-i="bio_p5">Έχω εκπαιδευτεί στη χορήγηση και αξιολόγηση των ψυχομετρικών εργαλείων MMPI®-2 και MMPI®-3 και είμαι μέλος της Ελληνικής Εταιρείας Συστημικής Θεραπείας. Η επαγγελματική μου εμπειρία περιλαμβάνει συμμετοχή σε ερευνητικά και εκπαιδευτικά προγράμματα, καθώς και παροχή συμβουλευτικής και ψυχολογικής υποστήριξης σε ευάλωτες κοινωνικές ομάδες. Από το 2023 διατηρώ ιδιωτικό γραφείο στα Ιλίσια, όπου παρέχω ατομικές, ομαδικές, οικογενειακές συνεδρίες και θεραπεία ζευγαριών, τόσο δια ζώσης όσο και διαδικτυακά.</p>
+      <div class="chips rv">
+        <span class="chip">ΕΚΠΑ</span>
+        <span class="chip">BSc Clinical Psychology · UCLan</span>
+        <span class="chip" data-i="chip_msc">MSc · Πάντειο Πανεπιστήμιο</span>
+        <span class="chip" data-i="chip_akma">Συστημική Ψυχοθεραπεία · ΑΚΜΑ</span>
+        <span class="chip">EFT</span>
+        <span class="chip">Compassion Focused</span>
+        <span class="chip">Mindfulness</span>
+        <span class="chip">MMPI®-2 / MMPI®-3</span>
+        <span class="chip" data-i="chip_elesyth">Μέλος ΕΛ.Ε.ΣΥ.Θ.</span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -412,39 +497,6 @@ footer{background:#0F1A1F;color:rgba(242,243,239,.6);padding:60px clamp(22px,5vw
     <div class="invite rv">
       <p data-i="inv_p">Αν διαβάζεις αυτές τις γραμμές, ίσως κάτι μέσα σου αναζητά κατανόηση, ανακούφιση ή αλλαγή. Η αναζήτηση βοήθειας δεν είναι ένδειξη αδυναμίας· είναι μια πράξη φροντίδας, θάρρους και βαθύτερης σύνδεσης με τον εαυτό σου.</p>
       <a href="#contact" class="btn btn-dark" data-i="inv_cta">Κάνε το πρώτο βήμα</a>
-    </div>
-  </div>
-</section>
-
-<!-- ================= BIO ================= -->
-<section id="bio">
-  <div class="wrap">
-    <span class="eyebrow rv" data-i="bio_eye">Βιογραφικό</span>
-    <h2 class="title rv d1" data-i="bio_t">Λίγα λόγια για εμένα</h2>
-    <div class="tline in"></div>
-    <div class="bio-grid">
-      <div class="pframe rv-scale" onclick="openLB()" role="button" tabindex="0" aria-label="Μεγέθυνση φωτογραφίας" onkeydown="if(event.key==='Enter')openLB()">
-        <img id="portrait" src="https://raw.githubusercontent.com/agelmet/MALAPETSA/refs/heads/main/picture.png" alt="Μαρία Μαλαπέτσα — Συστημική Ψυχοθεραπεύτρια" loading="lazy">
-        <span class="zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5L21 21M11 8v6M8 11h6"/></svg></span>
-      </div>
-      <div class="bio-txt">
-        <p class="rv" data-i="bio_p1">Είμαι Συστημική Ψυχοθεραπεύτρια και στόχος μου είναι να δημιουργώ μια θεραπευτική σχέση εμπιστοσύνης, μέσα στην οποία κάθε άνθρωπος μπορεί να προχωρήσει με τον δικό του ρυθμό προς μια πιο ισορροπημένη και ουσιαστική ζωή.</p>
-        <p class="rv" data-i="bio_p2">Έχω αποφοιτήσει από το Τμήμα Φιλοσοφίας, Παιδαγωγικής και Ψυχολογίας (με Κατεύθυνση Ψυχολογίας) του Εθνικού και Καποδιστριακού Πανεπιστημίου Αθηνών, ενώ παράλληλα κατέχω Bachelor στην Κλινική Ψυχολογία από το University of Central Lancashire. Έχω ολοκληρώσει μεταπτυχιακές σπουδές στο Πάντειο Πανεπιστήμιο με ειδίκευση στον Κοινωνικό Αποκλεισμό και τις Μειονότητες και Κατεύθυνση Ψυχολογίας — ένα πεδίο που ενίσχυσε βαθιά την ευαισθησία μου γύρω από ζητήματα ταυτότητας, κοινωνικών ανισοτήτων και ψυχολογικής επιβάρυνσης ευάλωτων πληθυσμών.</p>
-        <p class="rv" data-i="bio_p3">Εκπαιδεύτηκα στη Συστημική Ψυχοθεραπεία στο Αθηναϊκό Κέντρο Μελέτης του Ανθρώπου, μέσα από την οποία προσεγγίζω τον άνθρωπο στο ευρύτερο πλαίσιο των σχέσεων και των συστημάτων στα οποία ανήκει. Παράλληλα, έχω εκπαιδευτεί σε σύγχρονες θεραπευτικές προσεγγίσεις όπως η Συγκινησιακά Εστιασμένη Θεραπεία (EFT), η Συμπονετική Διερεύνηση (Compassion Focused Approaches) και το Mindfulness — εργαλεία που ενισχύουν την κατανόηση, τη ρύθμιση του συναισθήματος και την ανάπτυξη μιας πιο συμπονετικής σχέσης με τον εαυτό.</p>
-        <p class="rv" data-i="bio_p4">Ιδιαίτερο ενδιαφέρον για εμένα αποτελούν το τραύμα και το πένθος, οι αγχώδεις και καταθλιπτικές δυσκολίες, οι κρίσεις πανικού, καθώς και τα ψυχοσωματικά συμπτώματα που συχνά εκφράζουν βαθύτερες συναισθηματικές ανάγκες. Με απασχολούν επίσης οι δυσκολίες στις διαπροσωπικές σχέσεις και οι οικογενειακές δυναμικές, όπως και η ενδυνάμωση του ατόμου μέσα από μια διαδικασία προσωπικής ανάπτυξης και αυτογνωσίας.</p>
-        <p class="rv" data-i="bio_p5">Έχω εκπαιδευτεί στη χορήγηση και αξιολόγηση των ψυχομετρικών εργαλείων MMPI®-2 και MMPI®-3 και είμαι μέλος της Ελληνικής Εταιρείας Συστημικής Θεραπείας. Η επαγγελματική μου εμπειρία περιλαμβάνει συμμετοχή σε ερευνητικά και εκπαιδευτικά προγράμματα, καθώς και παροχή συμβουλευτικής και ψυχολογικής υποστήριξης σε ευάλωτες κοινωνικές ομάδες. Από το 2023 διατηρώ ιδιωτικό γραφείο στα Ιλίσια, όπου παρέχω ατομικές, ομαδικές, οικογενειακές συνεδρίες και θεραπεία ζευγαριών, τόσο δια ζώσης όσο και διαδικτυακά.</p>
-        <div class="chips rv">
-          <span class="chip">ΕΚΠΑ</span>
-          <span class="chip">BSc Clinical Psychology · UCLan</span>
-          <span class="chip" data-i="chip_msc">MSc · Πάντειο Πανεπιστήμιο</span>
-          <span class="chip" data-i="chip_akma">Συστημική Ψυχοθεραπεία · ΑΚΜΑ</span>
-          <span class="chip">EFT</span>
-          <span class="chip">Compassion Focused</span>
-          <span class="chip">Mindfulness</span>
-          <span class="chip">MMPI®-2 / MMPI®-3</span>
-          <span class="chip" data-i="chip_elesyth">Μέλος ΕΛ.Ε.ΣΥ.Θ.</span>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -585,6 +637,9 @@ const EN = {
  inv_p:'If you are reading these lines, perhaps something within you is seeking understanding, relief or change. Seeking help is not a sign of weakness; it is an act of care, courage and deeper connection with yourself.',
  inv_cta:'Take the first step',
  bio_eye:'About', bio_t:'A few words about me',
+ bio_role:'Systemic Psychotherapist', bio_role2:'Member, Hellenic Assoc. of Systemic Therapy',
+ bio_place2:'Ilisia · Athens',
+ bio_places:'Since 2023 I have kept a private practice in Ilisia, Athens — offering a space of trust, both in person and online.',
  bio_p1:'I am a Systemic Psychotherapist, and my aim is to create a therapeutic relationship of trust, within which every person can move at their own pace toward a more balanced and meaningful life.',
  bio_p2:'I graduated from the Department of Philosophy, Pedagogy and Psychology (Psychology track) of the National and Kapodistrian University of Athens, and I also hold a Bachelor’s degree in Clinical Psychology from the University of Central Lancashire. I completed postgraduate studies at Panteion University, specialising in Social Exclusion and Minorities with a Psychology focus — a field that deeply strengthened my sensitivity to questions of identity, social inequality and the psychological burden carried by vulnerable populations.',
  bio_p3:'I trained in Systemic Psychotherapy at the Athenian Institute of Anthropos (AKMA), through which I approach each person within the wider context of the relationships and systems they belong to. I have also trained in contemporary therapeutic approaches such as Emotionally Focused Therapy (EFT), Compassion Focused Approaches and Mindfulness — tools that support understanding, emotional regulation and a more compassionate relationship with oneself.',
@@ -693,14 +748,14 @@ function buildMarquee(){
       for(let j=i+1;j<nodes.length;j++){
         const a=nodes[i],b=nodes[j],d=Math.hypot(a.x-b.x,a.y-b.y);
         if(d<link){
-          ctx.strokeStyle=`rgba(127,160,143,${(1-d/link)*.34})`;
+          ctx.strokeStyle=`rgba(143,168,147,${(1-d/link)*.36})`;
           ctx.lineWidth=devicePixelRatio*.6;
           ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();
         }
       }
     }
     for(const p of nodes){
-      ctx.fillStyle='rgba(217,190,140,.85)';
+      ctx.fillStyle='rgba(221,185,136,.82)';
       ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,7);ctx.fill();
     }
     if(!reduced) requestAnimationFrame(frame);
@@ -749,6 +804,37 @@ function closeLB(){
 document.addEventListener('keydown',e=>{
   if(e.key==='Escape'){ closeLB(); drawer(false); }
 });
+
+/* ============ tulip draw animation ============ */
+document.querySelectorAll('.tulip.draw').forEach(t=>{
+  const path = t.querySelector('path');
+  if(path){ const L = Math.ceil(path.getTotalLength()); t.style.setProperty('--len', L); }
+});
+const tulipIO = new IntersectionObserver(es=>{
+  es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); tulipIO.unobserve(e.target); } });
+},{threshold:.2});
+document.querySelectorAll('.tulip.draw').forEach(t=>tulipIO.observe(t));
+
+/* ============ bio parallax ============ */
+const bioPar = document.getElementById('bioPar');
+const parItems = bioPar ? [...bioPar.querySelectorAll('.tulip')] : [];
+parItems.forEach(el=>{ el.dataset.flip = /scaleX/.test(el.getAttribute('style')||'') ? '1':'0'; });
+let parTick = false;
+function parallax(){
+  if(!bioPar) return;
+  const rect = bioPar.getBoundingClientRect();
+  const prog = (innerHeight - rect.top) / (innerHeight + rect.height); // 0..1 through viewport
+  parItems.forEach(el=>{
+    const sp = parseFloat(el.dataset.speed || 0);
+    const flip = el.dataset.flip==='1' ? 'scaleX(-1) ' : '';
+    el.style.transform = flip + `translateY(${(prog-0.5)*sp*260}px)`;
+  });
+  parTick = false;
+}
+if(bioPar && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  addEventListener('scroll',()=>{ if(!parTick){ requestAnimationFrame(parallax); parTick=true; } },{passive:true});
+  parallax();
+}
 
 /* ============ init ============ */
 setYear(); buildMarquee();
