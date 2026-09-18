@@ -12,25 +12,25 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='26' cy='32' r='14' fill='none' stroke='%23E0A24A' stroke-width='2.5'/%3E%3Ccircle cx='38' cy='32' r='14' fill='none' stroke='%23C98B45' stroke-width='2.5'/%3E%3Ccircle cx='32' cy='32' r='2.6' fill='%233A2A1C'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Commissioner:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Commissioner:wght@300;400;500;600&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Psychologist","name":"Μαρία Μαλαπέτσα","description":"Συστημική Ψυχοθεραπεύτρια — Σύμβουλος Ψυχικής Υγείας","address":{"@type":"PostalAddress","streetAddress":"Σεβαστείας 41","addressLocality":"Ιλίσια, Αθήνα","postalCode":"15771","addressCountry":"GR"},"telephone":["+302130480428","+306974809791"],"email":"malmaria7@gmail.com","image":"https://raw.githubusercontent.com/agelmet/MALAPETSA/refs/heads/main/picture.png"}
 </script>
 <style>
 :root{
-  --deep:#4A2A12;
-  --deep-2:#5E3718;
-  --ink:#3A2412;
-  --paper:#FBF3E6;
-  --card:#FFF9F0;
-  --sage:#E9B066;
-  --sage-deep:#A8561C;
-  --brass:#E8872A;
-  --brass-soft:#F6C24E;
-  --rose:#D9733A;
-  --line:rgba(58,36,18,.14);
-  --line-light:rgba(251,243,230,.16);
-  --serif:'EB Garamond',Georgia,serif;
+  --deep:#3A2A1C;
+  --deep-2:#4B3624;
+  --ink:#3B2E23;
+  --paper:#FBF4E9;
+  --card:#FFFAF2;
+  --sage:#D7A76C;
+  --sage-deep:#A26A3A;
+  --brass:#DE8F33;
+  --brass-soft:#F0BE72;
+  --rose:#C9805E;
+  --line:rgba(59,46,35,.14);
+  --line-light:rgba(251,244,233,.16);
+  --serif:'Cormorant Garamond',Georgia,serif;
   --sans:'Commissioner',system-ui,sans-serif;
   --ease:cubic-bezier(.22,.8,.28,1);
 }
@@ -47,38 +47,36 @@ strong{font-weight:500}
 #thread{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--sage-deep),var(--brass));z-index:1200;transition:width .1s linear}
 
 /* ---------- intro veil ---------- */
-#veil{position:fixed;inset:0;background:radial-gradient(130% 120% at 100% 100%,#E4661C 0%,#F39A2B 24%,#F9C43A 46%,#F8DC98 66%,#F6E8D6 86%);z-index:2000;display:flex;align-items:center;justify-content:center;transition:opacity .9s var(--ease),visibility .9s}
+#veil{position:fixed;inset:0;background:var(--deep);z-index:2000;display:flex;align-items:center;justify-content:center;transition:opacity .9s var(--ease),visibility .9s}
 #veil.gone{opacity:0;visibility:hidden}
 #veil svg{width:76px;height:76px;animation:veilPulse 1.6s var(--ease) infinite alternate}
 @keyframes veilPulse{from{transform:scale(.92);opacity:.65}to{transform:scale(1.05);opacity:1}}
 
 /* ---------- nav ---------- */
 nav{position:fixed;top:0;left:0;right:0;z-index:1100;display:flex;align-items:center;justify-content:space-between;padding:22px clamp(20px,5vw,64px);transition:background .5s,box-shadow .5s,padding .5s}
-nav.solid{background:rgba(251,243,230,.93);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:13px clamp(20px,5vw,64px);box-shadow:0 10px 36px rgba(58,36,18,.12)}
-.brand{display:flex;align-items:center;gap:12px;color:var(--ink)}
-footer .brand{color:var(--paper)}
+nav.solid{background:rgba(21,34,40,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:13px clamp(20px,5vw,64px);box-shadow:0 10px 40px rgba(0,0,0,.25)}
+.brand{display:flex;align-items:center;gap:12px;color:var(--paper)}
 .brand svg{width:42px;height:42px;flex:none}
 .brand .bn{font-family:var(--serif);font-size:1.28rem;letter-spacing:.02em;line-height:1.1}
-.brand .bt{font-size:.8rem;letter-spacing:.04em;color:var(--sage-deep);font-weight:400}
-footer .brand .bt{color:var(--brass-soft)}
+.brand .bt{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--brass-soft);font-weight:400}
 .nav-links{display:flex;align-items:center;gap:clamp(16px,2.4vw,34px);list-style:none}
-.nav-links a{color:rgba(58,36,18,.82);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:400;position:relative;padding:4px 0;transition:color .3s}
+.nav-links a{color:rgba(242,243,239,.82);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:400;position:relative;padding:4px 0;transition:color .3s}
 .nav-links a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--brass);transition:width .35s var(--ease)}
-.nav-links a:hover{color:var(--ink)}
+.nav-links a:hover{color:#fff}
 .nav-links a:hover::after{width:100%}
 .langs{display:flex;gap:8px;align-items:center;margin-left:10px}
-.langs button{width:30px;height:22px;border:1px solid rgba(58,36,18,.3);border-radius:4px;overflow:hidden;cursor:pointer;background:none;padding:0;opacity:.55;transition:opacity .3s,transform .3s,border-color .3s;display:flex}
+.langs button{width:30px;height:22px;border:1px solid rgba(242,243,239,.3);border-radius:4px;overflow:hidden;cursor:pointer;background:none;padding:0;opacity:.55;transition:opacity .3s,transform .3s,border-color .3s;display:flex}
 .langs button svg{width:100%;height:100%}
 .langs button.on{opacity:1;border-color:var(--brass);transform:scale(1.08)}
 .langs button:hover{opacity:1}
 #burger{display:none;background:none;border:none;cursor:pointer;z-index:1300;width:40px;height:40px;position:relative}
-#burger span{position:absolute;left:8px;right:8px;height:2px;background:var(--ink);transition:.35s var(--ease)}
+#burger span{position:absolute;left:8px;right:8px;height:2px;background:var(--paper);transition:.35s var(--ease)}
 #burger span:nth-child(1){top:13px}
 #burger span:nth-child(2){top:20px}
 #burger span:nth-child(3){top:27px}
 
 /* mobile drawer */
-#drawer{position:fixed;inset:0;background:linear-gradient(160deg,#B8601E 0%,#5A2F12 55%,#2E1A0B 100%);z-index:1250;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;opacity:0;visibility:hidden;transition:opacity .5s var(--ease),visibility .5s}
+#drawer{position:fixed;inset:0;background:linear-gradient(160deg,#7A4617 0%,#2B1B0F 100%);z-index:1250;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;opacity:0;visibility:hidden;transition:opacity .5s var(--ease),visibility .5s}
 #drawer.open{opacity:1;visibility:visible}
 #drawer a{color:var(--paper);font-family:var(--serif);font-size:clamp(1.7rem,7vw,2.4rem);padding:10px 0;opacity:0;transform:translateY(24px);transition:opacity .5s var(--ease),transform .5s var(--ease),color .3s}
 #drawer.open a{opacity:1;transform:none}
@@ -89,47 +87,32 @@ footer .brand .bt{color:var(--brass-soft)}
 #drawer .dlangs button svg{width:100%;height:100%}
 #drawer .dlangs button.on{opacity:1;border-color:var(--brass)}
 #xclose{position:absolute;top:22px;right:24px;width:52px;height:52px;background:rgba(242,243,239,.06);border:1px solid rgba(242,243,239,.28);border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .35s var(--ease),background .3s}
-#xclose:hover{transform:rotate(90deg);background:rgba(232,135,42,.18)}
+#xclose:hover{transform:rotate(90deg);background:rgba(196,162,101,.18)}
 #xclose svg{width:22px;height:22px;stroke:var(--paper);stroke-width:2}
 
 /* ---------- hero ---------- */
-header{position:relative;min-height:100svh;background:radial-gradient(135% 125% at 100% 100%,#DD5E18 0%,#EF8A26 18%,#F7B232 36%,#F8CF5E 52%,#F6DFA6 68%,#F4E6D4 84%,#F3E7DA 100%);color:var(--ink);display:flex;align-items:flex-end;overflow:hidden}
-.dawn-glow{position:absolute;right:-18vmax;bottom:-18vmax;width:80vmax;height:80vmax;border-radius:50%;background:radial-gradient(circle,rgba(226,96,26,.55) 0%,rgba(239,138,38,.25) 40%,rgba(239,138,38,0) 70%);animation:breathe 9s ease-in-out infinite alternate;pointer-events:none}
-@keyframes breathe{from{transform:scale(.94);opacity:.8}to{transform:scale(1.06);opacity:1}}
-.dawn-arc{position:absolute;width:150vmax;height:150vmax;right:-75vmax;bottom:-75vmax;pointer-events:none;animation:arcspin 260s linear infinite}
-.dawn-arc circle{fill:none;stroke:#3A2412;stroke-width:2.4;stroke-linecap:round;stroke-dasharray:0 13;opacity:.62}
-.dawn-arc circle.inner{opacity:.18;stroke-dasharray:0 9;stroke-width:1.8}
-@keyframes arcspin{to{transform:rotate(360deg)}}
-header::after{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");opacity:.07;mix-blend-mode:multiply;pointer-events:none}
+header{position:relative;min-height:100svh;background:radial-gradient(1500px 900px at 78% 10%,#DE9236 0%,#A85E1B 28%,#6A3E16 58%,#33200F 100%);color:var(--paper);display:flex;align-items:center;overflow:hidden}
 #web{position:absolute;inset:0;width:100%;height:100%}
-.hero-in{position:relative;z-index:2;width:100%;max-width:1200px;margin:0 auto;padding:150px clamp(22px,5vw,64px) clamp(110px,15vh,170px);display:flex;flex-direction:column;align-items:flex-end;text-align:right}
-h1.hquote{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(2.1rem,4.6vw,3.9rem);line-height:1.16;letter-spacing:-.005em;color:var(--ink);max-width:900px;margin:22px 0 0}
-h1.hquote .w{display:inline-block;opacity:0;transform:translateY(.45em);animation:wordin .9s var(--ease) forwards}
-@keyframes wordin{to{opacity:1;transform:none}}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:.74rem;letter-spacing:.26em;text-transform:uppercase;color:#6E3510;font-weight:400;opacity:0;animation:rise 1s var(--ease) .35s forwards}
-.hero-eyebrow::before{content:'';width:44px;height:1px;background:#6E3510}
+.hero-in{position:relative;z-index:2;width:100%;max-width:1200px;margin:0 auto;padding:140px clamp(22px,5vw,64px) 110px}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--brass-soft);font-weight:400;opacity:0;animation:rise 1s var(--ease) .35s forwards}
+.hero-eyebrow::before{content:'';width:44px;height:1px;background:var(--brass)}
 h1.hname{font-size:clamp(3rem,9vw,6.4rem);font-weight:500;letter-spacing:.01em;margin:20px 0 6px;overflow:hidden}
 h1.hname .w{display:inline-block;transform:translateY(110%);animation:up 1.1s var(--ease) forwards}
 h1.hname .w:nth-child(2){animation-delay:.15s}
 .hero-sub{font-family:var(--serif);font-style:italic;font-size:clamp(1.15rem,2.6vw,1.6rem);color:rgba(242,243,239,.85);max-width:640px;opacity:0;animation:rise 1.1s var(--ease) .8s forwards}
-.hero-line{width:0;height:1px;background:linear-gradient(270deg,#3A2412,transparent);margin:34px 0;animation:grow 1.4s var(--ease) 1.05s forwards}
-.hero-cta{display:flex;gap:18px;flex-wrap:wrap;justify-content:flex-end;opacity:0;animation:rise 1s var(--ease) 1.2s forwards}
+.hero-line{width:0;height:1px;background:linear-gradient(90deg,var(--brass),transparent);margin:34px 0;animation:grow 1.4s var(--ease) 1.05s forwards}
+.hero-cta{display:flex;gap:18px;flex-wrap:wrap;opacity:0;animation:rise 1s var(--ease) 1.2s forwards}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 34px;border-radius:100px;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;transition:transform .35s var(--ease),box-shadow .35s,background .35s,color .35s;position:relative;overflow:hidden}
 .btn-brass{background:var(--brass);color:var(--deep)}
-.btn-brass:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(232,135,42,.35);background:var(--brass-soft)}
+.btn-brass:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(196,162,101,.35);background:var(--brass-soft)}
 .btn-ghost{border:1px solid rgba(242,243,239,.35);color:var(--paper)}
 .btn-ghost:hover{border-color:var(--brass);color:var(--brass-soft);transform:translateY(-3px)}
-.scroll-hint{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(58,36,18,.55);font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;z-index:2;opacity:0;animation:rise 1s var(--ease) 1.8s forwards}
-.scroll-hint::after{content:'';width:1px;height:44px;background:linear-gradient(180deg,#3A2412,transparent);animation:drip 2s var(--ease) infinite}
+.scroll-hint{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(242,243,239,.5);font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;z-index:2;opacity:0;animation:rise 1s var(--ease) 1.8s forwards}
+.scroll-hint::after{content:'';width:1px;height:44px;background:linear-gradient(180deg,var(--brass),transparent);animation:drip 2s var(--ease) infinite}
 @keyframes drip{0%{transform:scaleY(0);transform-origin:top}55%{transform:scaleY(1);transform-origin:top}56%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 @keyframes up{to{transform:none}}
 @keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
 @keyframes grow{to{width:min(420px,70%)}}
-header .btn-brass{background:var(--ink);color:var(--paper)}
-header .btn-brass:hover{background:#5E3718;box-shadow:0 16px 36px rgba(58,36,18,.3)}
-header .btn-ghost{border-color:rgba(58,36,18,.45);color:var(--ink)}
-header .btn-ghost:hover{border-color:var(--ink);color:var(--ink);background:rgba(251,243,230,.35)}
-#web{opacity:.55}
 
 /* ---------- shared section chrome ---------- */
 section{position:relative}
@@ -163,38 +146,14 @@ h2.title{font-size:clamp(2.1rem,5vw,3.4rem);margin:16px 0 0;color:var(--ink)}
 .qwho::before{content:'';width:34px;height:1px;background:var(--brass)}
 .qband-orn{position:absolute;right:-120px;top:50%;transform:translateY(-50%);width:420px;height:420px;opacity:.08;pointer-events:none}
 
-/* ---------- welcome (home, slide 1) ---------- */
-.welcome{background:linear-gradient(180deg,#F3E7DA 0%,var(--paper) 100%)}
-.wel-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,90px);align-items:center;max-width:1100px;margin:0 auto}
-.wel-img{margin:0}
-.wel-img img{width:100%;height:auto;border-radius:16px;box-shadow:0 28px 64px rgba(58,36,18,.18)}
-.wel-txt p{font-family:var(--serif);font-style:italic;font-size:clamp(1.25rem,1.9vw,1.55rem);line-height:1.55;color:var(--ink);margin-bottom:1.1em}
-.wel-sign{margin-top:26px;padding-top:22px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:3px;font-family:var(--serif);font-style:italic;color:var(--sage-deep);font-size:1.08rem}
-.wel-sign .nm{font-size:1.3rem;color:var(--ink)}
-.welcome .invite{margin-top:clamp(56px,8vw,96px)}
-
 /* her page, in her words: normal case, not capitals */
 #psy .eyebrow{text-transform:none;letter-spacing:.12em;font-size:.82rem}
 /* ---------- psychotherapy editorial ---------- */
 .psy-grid{display:grid;grid-template-columns:minmax(260px,.85fr) 1.6fr;gap:clamp(40px,6vw,100px);align-items:start}
 .psy-left{position:sticky;top:120px}
 .psy-left p.lead{font-family:var(--serif);font-style:italic;font-size:1.25rem;color:var(--sage-deep);margin-top:26px;line-height:1.6}
-.psy-right > p{margin-bottom:1.5em}
-#psy{background:var(--paper)}
-#psy h2.title{font-style:normal;font-size:clamp(2.1rem,3.7vw,2.9rem);white-space:nowrap}
-.psy-sub{font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,2.2vw,1.65rem);color:var(--sage-deep);margin-top:10px;line-height:1.3}
-.psy-img{margin:34px 0 0}
-.psy-img img{width:100%;height:auto;border-radius:14px;box-shadow:0 22px 50px rgba(58,36,18,.16)}
-/* the two quotes: italic, smaller than the text */
-.pq{margin:0 0 2.4em;padding:4px 0 4px 26px;border-left:2px solid var(--brass-soft)}
-.pq p{font-family:var(--serif);font-style:italic;font-size:15px;line-height:1.75;color:rgba(58,36,18,.78)}
-.pq cite{display:block;margin-top:12px;font-family:var(--serif);font-style:normal;font-size:.92rem;letter-spacing:.03em;color:var(--sage-deep)}
-.pq cite::before{content:'— '}
-/* Seferis, at the end, set apart with colour */
-.pq.seferis{margin:3em 0 0;padding:30px 32px 28px 34px;border-left:3px solid var(--brass);border-radius:0 16px 16px 0;background:linear-gradient(120deg,#FCE7C2 0%,#F9D48A 55%,#F4B764 100%);box-shadow:0 18px 44px rgba(232,135,42,.18)}
-.pq.seferis p{color:#8A3F0F}
-.pq.seferis cite{color:#5A2A0B;font-weight:500}
-.psy-right > p:first-of-type::first-letter{font-family:var(--serif);font-size:4.4em;float:left;line-height:.82;padding:6px 14px 0 0;color:var(--sage-deep)}
+.psy-right p{margin-bottom:1.5em}
+.psy-right p:first-child::first-letter{font-family:var(--serif);font-size:4.4em;float:left;line-height:.82;padding:6px 14px 0 0;color:var(--sage-deep)}
 .hl{background:linear-gradient(transparent 62%,rgba(240,190,114,.42) 62%);padding:0 2px}
 
 /* the closing quote is the one that should stay with you */
@@ -211,17 +170,17 @@ h2.title{font-size:clamp(2.1rem,5vw,3.4rem);margin:16px 0 0;color:var(--ink)}
 .panel h3{font-size:clamp(1.5rem,2.6vw,2rem);margin-bottom:18px;color:var(--ink)}
 .panel p{margin-bottom:1.2em}
 .panel p:last-child{margin-bottom:0}
-.panel .pico{width:52px;height:52px;border-radius:50%;background:rgba(232,135,42,.14);display:flex;align-items:center;justify-content:center;margin-bottom:22px}
+.panel .pico{width:52px;height:52px;border-radius:50%;background:rgba(127,160,143,.14);display:flex;align-items:center;justify-content:center;margin-bottom:22px}
 .panel .pico svg{width:26px;height:26px;stroke:var(--sage-deep);fill:none;stroke-width:1.6}
 .panel.deep{background:var(--deep);color:rgba(242,243,239,.88);border-color:transparent}
 .panel.deep h3{color:var(--paper)}
-.panel.deep .pico{background:rgba(232,135,42,.16)}
+.panel.deep .pico{background:rgba(196,162,101,.16)}
 .panel.deep .pico svg{stroke:var(--brass-soft)}
 .invite{margin-top:clamp(40px,6vw,64px);text-align:center;max-width:760px;margin-left:auto;margin-right:auto}
 .invite p{font-family:var(--serif);font-style:italic;font-size:clamp(1.2rem,2.6vw,1.55rem);line-height:1.6;color:var(--sage-deep)}
 .invite .btn{margin-top:30px}
 .btn-dark{background:var(--deep);color:var(--paper)}
-.btn-dark:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(58,36,18,.3);background:var(--deep-2)}
+.btn-dark:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(21,34,40,.3);background:var(--deep-2)}
 
 /* ---------- tulip motif (from her card) ---------- */
 .tulip{position:absolute;pointer-events:none;z-index:0}
@@ -237,22 +196,16 @@ h2.title{font-size:clamp(2.1rem,5vw,3.4rem);margin:16px 0 0;color:var(--ink)}
 .bio-head .eyebrow{justify-content:center}
 .bio-head .eyebrow::after{content:'';width:36px;height:1px;background:var(--brass)}
 .bio-head .tline{margin-left:auto;margin-right:auto}
-.bio-grid{display:grid;grid-template-columns:250px 1fr;gap:clamp(40px,6vw,80px);align-items:start;max-width:1060px;margin:0 auto;position:relative;z-index:2}
-.bio-photo{position:sticky;top:120px}
-.bio-parallax .tulip:nth-child(even){display:none}
-.bio-text h2.title{font-style:italic}
-.bio-text .bio-body{max-width:none;margin:clamp(30px,4vw,44px) 0 0}
-.bio-text .chips{justify-content:flex-start}
 .bio-hero{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:clamp(30px,5vw,72px);margin:clamp(48px,7vw,80px) auto 0;max-width:1060px;position:relative;z-index:2}
 .bio-hero .intro{font-family:var(--serif);font-size:clamp(1.25rem,2.4vw,1.7rem);font-style:italic;line-height:1.5;color:var(--sage-deep)}
 .bio-hero .intro.right{text-align:right}
 .bio-hero .signoff{margin-top:22px;font-family:var(--serif);font-style:normal;font-size:1.02rem;letter-spacing:.02em;color:var(--ink);display:flex;flex-direction:column;gap:2px}
 .bio-hero .signoff.right{align-items:flex-end}
 .bio-hero .signoff .role{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--brass);font-family:var(--sans);font-weight:500}
-.pframe{position:relative;cursor:zoom-in;width:100%;max-width:250px}
+.pframe{position:relative;cursor:zoom-in;width:clamp(190px,21vw,250px)}
 .pframe::before{content:'';position:absolute;inset:0;transform:translate(10px,10px);border:1px solid var(--brass);border-radius:10px;transition:transform .6s var(--ease);z-index:0}
 .pframe:hover::before{transform:translate(6px,6px)}
-.pframe img{position:relative;z-index:1;border-radius:10px;width:100%;height:auto;box-shadow:0 18px 44px rgba(58,42,28,.22);transition:transform .6s var(--ease)}
+.pframe img{position:relative;z-index:1;border-radius:10px;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;box-shadow:0 18px 44px rgba(58,42,28,.22);transition:transform .6s var(--ease)}
 .pframe:hover img{transform:scale(1.012)}
 .pframe .zoom{position:absolute;z-index:2;right:14px;bottom:14px;width:44px;height:44px;border-radius:50%;background:rgba(58,42,28,.78);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;transition:background .3s}
 .pframe:hover .zoom{background:var(--brass)}
@@ -262,11 +215,11 @@ h2.title{font-size:clamp(2.1rem,5vw,3.4rem);margin:16px 0 0;color:var(--ink)}
 .bio-body p:first-of-type::first-letter{font-family:var(--serif);font-size:3.4em;float:left;line-height:.82;padding:6px 12px 0 0;color:var(--brass)}
 .bio-parallax{position:absolute;left:50%;top:0;transform:translateX(-50%);width:min(1200px,96vw);height:100%;z-index:1;pointer-events:none}
 .chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 30px;justify-content:center}
-.chip{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;color:var(--sage-deep);border:1px solid rgba(168,86,28,.35);padding:8px 16px;border-radius:100px;background:rgba(232,135,42,.08);transition:background .3s,color .3s,transform .3s}
+.chip{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;color:var(--sage-deep);border:1px solid rgba(67,99,90,.35);padding:8px 16px;border-radius:100px;background:rgba(127,160,143,.08);transition:background .3s,color .3s,transform .3s}
 .chip:hover{background:var(--sage-deep);color:#fff;transform:translateY(-2px)}
 
 /* ---------- services ---------- */
-.svc-bg{background:linear-gradient(160deg,#6B3512 0%,#4A2A12 55%,#3A200D 100%);color:var(--paper)}
+.svc-bg{background:var(--deep);color:var(--paper)}
 .svc-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(44px,7vw,110px);margin-top:clamp(44px,6vw,70px);align-items:start}
 .ledger{list-style:none}
 .ledger li{display:flex;align-items:center;gap:22px;padding:26px 6px;border-bottom:1px solid var(--line-light);position:relative;transition:padding-left .4s var(--ease)}
@@ -274,7 +227,7 @@ h2.title{font-size:clamp(2.1rem,5vw,3.4rem);margin:16px 0 0;color:var(--ink)}
 .ledger li:hover{padding-left:18px}
 .ledger li::after{content:'';position:absolute;left:0;bottom:-1px;height:1px;width:0;background:var(--brass);transition:width .5s var(--ease)}
 .ledger li:hover::after{width:100%}
-.ledger .lic{width:44px;height:44px;flex:none;border-radius:50%;border:1px solid rgba(232,135,42,.4);display:flex;align-items:center;justify-content:center}
+.ledger .lic{width:44px;height:44px;flex:none;border-radius:50%;border:1px solid rgba(196,162,101,.4);display:flex;align-items:center;justify-content:center}
 .ledger .lic svg{width:20px;height:20px;stroke:var(--brass-soft);fill:none;stroke-width:1.5}
 .ledger .lt{font-family:var(--serif);font-size:clamp(1.15rem,2vw,1.45rem);color:var(--paper)}
 .ledger .ls{font-size:.8rem;color:rgba(242,243,239,.55);margin-top:2px}
@@ -282,7 +235,7 @@ h2.title{font-size:clamp(2.1rem,5vw,3.4rem);margin:16px 0 0;color:var(--ink)}
 .areas .asub{color:rgba(242,243,239,.6);font-size:.92rem;margin-bottom:26px}
 .acloud{display:flex;flex-wrap:wrap;gap:12px}
 .atag{font-size:.86rem;font-weight:400;color:var(--paper);border:1px solid rgba(242,243,239,.25);padding:12px 22px;border-radius:100px;transition:border-color .3s,background .3s,transform .3s;cursor:default}
-.atag:hover{border-color:var(--brass);background:rgba(232,135,42,.12);transform:translateY(-3px)}
+.atag:hover{border-color:var(--brass);background:rgba(196,162,101,.12);transform:translateY(-3px)}
 .online-note{margin-top:40px;display:flex;gap:16px;align-items:flex-start;background:rgba(242,243,239,.05);border:1px solid var(--line-light);border-radius:16px;padding:22px 24px}
 .online-note svg{width:26px;height:26px;flex:none;stroke:var(--brass-soft);fill:none;stroke-width:1.5;margin-top:2px}
 .online-note p{font-size:.92rem;color:rgba(242,243,239,.75)}
@@ -293,8 +246,8 @@ h2.title{font-size:clamp(2.1rem,5vw,3.4rem);margin:16px 0 0;color:var(--ink)}
 .marquee{display:flex;gap:26px;width:max-content;padding:14px 0 8px;animation:mar 60s linear infinite}
 .marquee:hover{animation-play-state:paused}
 @keyframes mar{to{transform:translateX(-50%)}}
-.rcard{width:min(420px,84vw);background:var(--card);border:1px solid var(--line);border-radius:22px;padding:34px 32px;display:flex;flex-direction:column;gap:16px;box-shadow:0 14px 34px rgba(58,36,18,.06);transition:transform .4s var(--ease),box-shadow .4s}
-.rcard:hover{transform:translateY(-6px);box-shadow:0 26px 54px rgba(58,36,18,.13)}
+.rcard{width:min(420px,84vw);background:var(--card);border:1px solid var(--line);border-radius:22px;padding:34px 32px;display:flex;flex-direction:column;gap:16px;box-shadow:0 14px 34px rgba(21,34,40,.06);transition:transform .4s var(--ease),box-shadow .4s}
+.rcard:hover{transform:translateY(-6px);box-shadow:0 26px 54px rgba(21,34,40,.13)}
 .stars{display:flex;gap:4px}
 .stars svg{width:15px;height:15px;fill:var(--brass)}
 .rtxt{font-size:.94rem;line-height:1.7;color:var(--ink)}
@@ -310,17 +263,17 @@ h2.title{font-size:clamp(2.1rem,5vw,3.4rem);margin:16px 0 0;color:var(--ink)}
 .ct-list{list-style:none;display:flex;flex-direction:column;gap:8px}
 .ct-list li{display:flex;gap:20px;align-items:flex-start;padding:24px 0;border-bottom:1px solid var(--line)}
 .ct-list li:first-child{border-top:1px solid var(--line)}
-.cico{width:48px;height:48px;flex:none;border-radius:50%;background:rgba(232,135,42,.14);display:flex;align-items:center;justify-content:center}
+.cico{width:48px;height:48px;flex:none;border-radius:50%;background:rgba(127,160,143,.14);display:flex;align-items:center;justify-content:center}
 .cico svg{width:22px;height:22px;stroke:var(--sage-deep);fill:none;stroke-width:1.6}
 .ct-list .cl{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--sage-deep);font-weight:500}
 .ct-list .cv{font-family:var(--serif);font-size:1.3rem;color:var(--ink);line-height:1.4}
 .ct-list a.cv:hover{color:var(--sage-deep)}
-.ct-note{font-size:.9rem;color:rgba(58,36,18,.65);margin-top:26px}
+.ct-note{font-size:.9rem;color:rgba(36,51,59,.65);margin-top:26px}
 .mapbox{border-radius:22px;overflow:hidden;border:1px solid var(--line);box-shadow:0 26px 60px rgba(58,42,28,.12);height:100%;min-height:420px;position:relative}
 .mapbox iframe{width:100%;height:100%;min-height:420px;border:0;filter:grayscale(.35) saturate(.8)}
 
 /* ---------- footer ---------- */
-footer{background:#2E1A0B;color:rgba(242,243,239,.6);padding:60px clamp(22px,5vw,64px) 34px}
+footer{background:#24170E;color:rgba(242,243,239,.6);padding:60px clamp(22px,5vw,64px) 34px}
 .f-in{max-width:1200px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:22px;text-align:center}
 .f-in .brand{flex-direction:column;gap:10px}
 .f-links{display:flex;gap:26px;flex-wrap:wrap;justify-content:center}
@@ -331,16 +284,16 @@ footer{background:#2E1A0B;color:rgba(242,243,239,.6);padding:60px clamp(22px,5vw
 .f-bar a:hover{border-color:var(--brass-soft)}
 
 /* ---------- lightbox ---------- */
-#lb{position:fixed;inset:0;background:rgba(36,20,8,.94);z-index:1500;display:flex;align-items:center;justify-content:center;padding:5vw;opacity:0;visibility:hidden;transition:opacity .45s var(--ease),visibility .45s}
+#lb{position:fixed;inset:0;background:rgba(15,26,31,.94);z-index:1500;display:flex;align-items:center;justify-content:center;padding:5vw;opacity:0;visibility:hidden;transition:opacity .45s var(--ease),visibility .45s}
 #lb.open{opacity:1;visibility:visible}
 #lb img{max-width:92vw;max-height:88vh;border-radius:14px;box-shadow:0 40px 100px rgba(0,0,0,.5);transform:scale(.92);transition:transform .45s var(--ease)}
 #lb.open img{transform:none}
 #lbx{position:absolute;top:22px;right:24px;width:52px;height:52px;border-radius:50%;background:rgba(242,243,239,.08);border:1px solid rgba(242,243,239,.3);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .35s var(--ease),background .3s}
-#lbx:hover{transform:rotate(90deg);background:rgba(232,135,42,.25)}
+#lbx:hover{transform:rotate(90deg);background:rgba(196,162,101,.25)}
 #lbx svg{width:20px;height:20px;stroke:var(--paper);stroke-width:2}
 
 /* ---------- top btn ---------- */
-#top{position:fixed;right:26px;bottom:26px;width:52px;height:52px;border-radius:50%;background:var(--deep);border:1px solid rgba(232,135,42,.5);color:var(--brass-soft);cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:1000;opacity:0;visibility:hidden;transform:translateY(16px);transition:.4s var(--ease)}
+#top{position:fixed;right:26px;bottom:26px;width:52px;height:52px;border-radius:50%;background:var(--deep);border:1px solid rgba(196,162,101,.5);color:var(--brass-soft);cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:1000;opacity:0;visibility:hidden;transform:translateY(16px);transition:.4s var(--ease)}
 #top.show{opacity:1;visibility:visible;transform:none}
 #top:hover{background:var(--brass);color:var(--deep);border-color:var(--brass)}
 #top svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2}
@@ -356,18 +309,9 @@ footer{background:#2E1A0B;color:rgba(242,243,239,.6);padding:60px clamp(22px,5vw
   .bio-hero .intro,.bio-hero .intro.right{text-align:center;order:2}
   .bio-hero .signoff,.bio-hero .signoff.right{align-items:center}
   .pframe{order:1;margin:0 auto;width:min(230px,62vw)}
-  .wel-grid,.bio-grid{grid-template-columns:1fr}
-  .bio-photo{position:static;display:flex;justify-content:center}
-  .bio-photo .pframe{width:min(220px,58vw)}
-  .bio-text{text-align:left}
-  .psy-img{max-width:520px}
   .bio-hero .b-first{order:2}.bio-hero .b-last{order:3}
 }
 @media(max-width:560px){
-  .hero-in{align-items:flex-start;text-align:left}
-  .hero-cta{justify-content:flex-start}
-  .hero-line{background:linear-gradient(90deg,#3A2412,transparent)}
-  .pq.seferis{padding:24px 22px 22px 24px}
   body{font-size:15.5px}
   .hero-in{padding-top:120px;padding-bottom:130px}
   .rcard{padding:26px 22px}
@@ -391,10 +335,10 @@ footer{background:#2E1A0B;color:rgba(242,243,239,.6);padding:60px clamp(22px,5vw
 
 <nav id="nav">
   <a href="#hero" class="brand" aria-label="Μαρία Μαλαπέτσα">
-    <svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="26" cy="32" r="14" stroke="#E0A24A" stroke-width="2"/><circle cx="38" cy="32" r="14" stroke="#C98B45" stroke-width="2"/><circle cx="32" cy="32" r="2.6" fill="#3A2412"/></svg>
+    <svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="26" cy="32" r="14" stroke="#E0A24A" stroke-width="2"/><circle cx="38" cy="32" r="14" stroke="#C98B45" stroke-width="2"/><circle cx="32" cy="32" r="2.6" fill="#FBF4E9"/></svg>
     <span>
       <span class="bn" data-i="brand_n">Μαρία Μαλαπέτσα</span><br>
-      <span class="bt" data-i="brand_t">Συστημική Ψυχοθεραπεία</span>
+      <span class="bt" data-i="brand_t">Συστημικη Ψυχοθεραπεια</span>
     </span>
   </a>
   <ul class="nav-links">
@@ -425,12 +369,11 @@ footer{background:#2E1A0B;color:rgba(242,243,239,.6);padding:60px clamp(22px,5vw
 </div>
 
 <header id="hero">
-  <div class="dawn-glow" aria-hidden="true"></div>
-  <svg class="dawn-arc" viewBox="0 0 1000 1000" aria-hidden="true"><circle cx="500" cy="500" r="330"/><circle class="inner" cx="500" cy="500" r="250"/></svg>
   <canvas id="web" aria-hidden="true"></canvas>
   <div class="hero-in">
-    <span class="hero-eyebrow" data-i="h_eye">Μαρία Μαλαπέτσα · Συστημική Ψυχοθεραπεύτρια</span>
-    <h1 class="hquote" data-i="h_q">Η δύναμη δεν είναι να μην φοβάσαι — είναι να προχωράς με τον φόβο και την αλήθειά σου</h1>
+    <span class="hero-eyebrow" data-i="h_eye">Συστημική Ψυχοθεραπεύτρια · Σύμβουλος Ψυχικής Υγείας</span>
+    <h1 class="hname"><span class="w" data-i="h_n1">Μαρία</span> <span class="w" data-i="h_n2">Μαλαπέτσα</span></h1>
+    <p class="hero-sub" data-i="h_sub">Η δύναμη δεν είναι να μην φοβάσαι — είναι να προχωράς με τον φόβο και την αλήθειά σου.</p>
     <div class="hero-line"></div>
     <div class="hero-cta">
       <a href="#contact" class="btn btn-brass" data-i="h_cta1">Κλείστε συνεδρία</a>
@@ -440,53 +383,12 @@ footer{background:#2E1A0B;color:rgba(242,243,239,.6);padding:60px clamp(22px,5vw
   <div class="scroll-hint" data-i="h_scroll">Κύλιση</div>
 </header>
 
-<section class="welcome" id="arxiki">
+<section class="quote-band">
+  <div class="tulip light draw" style="left:-40px;top:20px;width:150px;height:260px" aria-hidden="true"><svg viewBox="0 0 120 220" preserveAspectRatio="xMidYMax meet"><path d="M60 218 C58 180 55 150 50 120 C46 96 44 78 45 62 M45 62 C40 52 34 48 30 52 C26 56 30 64 38 66 C44 67 45 64 45 62 Z M45 62 C50 52 56 48 60 52 C64 56 60 64 52 66 C46 67 45 64 45 62 M45 62 C45 54 46 46 49 41 C52 36 57 35 59 39 C61 43 57 50 51 55 M60 218 C50 176 30 150 16 138 C6 129 4 118 8 112 M60 218 C56 172 44 138 34 118 M60 218 C66 176 82 146 96 132 C106 122 108 112 104 106 M60 218 C64 174 76 144 86 126"/></svg></div>
+  <div class="tulip light draw" style="right:-40px;bottom:20px;width:150px;height:260px;transform:scaleX(-1)" aria-hidden="true"><svg viewBox="0 0 120 220" preserveAspectRatio="xMidYMax meet"><path d="M62 218 C64 178 66 150 64 122 C62 100 60 82 58 66 M58 66 C52 55 45 50 40 55 C36 59 41 68 50 69 C56 69 58 68 58 66 Z M58 66 C64 55 72 51 76 56 C80 61 74 69 65 70 C59 70 58 68 58 66 M58 66 C58 57 60 48 63 43 C66 38 72 38 74 43 C76 48 71 56 64 60 M62 218 C50 174 28 146 14 134 C5 126 3 116 7 110 M62 218 C58 170 46 136 36 116 M62 218 C70 178 88 150 102 138 C112 130 114 120 110 114 M62 218 C66 172 80 142 90 124"/></svg></div>
   <div class="wrap">
-    <div class="wel-grid">
-      <figure class="wel-img rv-l"><img src="assets/home-leaves.jpg" width="1500" height="1000" alt="Δύο πρόσωπα από φθινοπωρινά φύλλα, το ένα απέναντι στο άλλο" loading="lazy"></figure>
-      <div class="wel-txt rv-r">
-        <p data-i="wel_p1">Η Ψυχοθεραπεία είναι μια διαδικασία προσωπικής εξερεύνησης, μέσα σε μια σχέση εμπιστοσύνης, αποδοχής και σεβασμού.</p>
-        <p data-i="wel_p2">Στόχος μου είναι να δημιουργώ μια θεραπευτική σχέση εμπιστοσύνης, μέσα στην οποία κάθε άνθρωπος μπορεί να προχωρήσει με τον δικό του ρυθμό προς μια πιο ισορροπημένη και ουσιαστική ζωή.</p>
-        <div class="wel-sign">
-          <span class="nm" data-i="brand_n">Μαρία Μαλαπέτσα</span>
-          <span data-i="wel_r1">Συστημική Ψυχοθεραπεύτρια</span>
-          <span data-i="wel_r2">Σύμβουλος Ψυχικής Υγείας</span>
-        </div>
-      </div>
-    </div>
-    <div class="invite rv">
-      <p data-i="inv_p">Αν διαβάζεις αυτές τις γραμμές, ίσως κάτι μέσα σου αναζητά κατανόηση, ανακούφιση ή αλλαγή. Η αναζήτηση βοήθειας δεν είναι ένδειξη αδυναμίας· είναι μια πράξη φροντίδας, θάρρους και βαθύτερης σύνδεσης με τον εαυτό σου.</p>
-      <a href="#contact" class="btn btn-dark" data-i="inv_cta">Κάνε το πρώτο βήμα</a>
-    </div>
-  </div>
-</section>
-
-
-<section id="psy">
-  <div class="wrap">
-    <div class="psy-grid">
-      <div class="psy-left rv-l">
-        <h2 class="title" data-i="psy_t">Η Ψυχοθεραπεία</h2>
-        <p class="psy-sub" data-i="psy_sub">Ένας χώρος για να ανασάνεις</p>
-        <div class="tline"></div>
-        <p class="lead" data-i="psy_lead">Μια διαδικασία προσωπικής εξερεύνησης, μέσα σε μια σχέση εμπιστοσύνης, αποδοχής και σεβασμού.</p>
-        <figure class="psy-img"><img src="assets/psy-rings.jpg" width="1500" height="936" alt="Αφηρημένα γεωμετρικά σχήματα σε ζεστούς γήινους τόνους" loading="lazy"></figure>
-      </div>
-      <div class="psy-right">
-        <blockquote class="pq rv">
-          <p data-i="q1">Συμβαίνει να είμαστε πλάσματα γεμάτα φόβους και ψιλοδουλεμένες άμυνες. Φοβόμαστε ακόμα και την αληθινή χαρά, την ευτυχία και, ίσως περισσότερο, τη βαθιά αγάπη. Για διάφορους λόγους τις αποφεύγουμε και βάζουμε στη θέση τους στόχους και επιλογές που νιώθουμε ότι ελέγχουμε καλύτερα. Κρύβει όμως μεγάλη θλίψη και κατάθλιψη η αποφυγή της αυθεντικής, της ζωντανής ζωής.</p>
-          <cite data-i="q1w">Μάρω Βαμβουνάκη</cite>
-        </blockquote>
-        <p class="rv" data-i="psy_p1">Πολλές φορές στη ζωή μας νιώθουμε ότι κάτι μας βαραίνει, χωρίς να μπορούμε πάντα να το εξηγήσουμε. Άλλες φορές επαναλαμβάνουμε τις ίδιες δυσκολίες στις σχέσεις μας, παλεύουμε με το άγχος, την αβεβαιότητα ή την αίσθηση ότι έχουμε απομακρυνθεί από τον εαυτό μας. Και κάποιες φορές, ακόμη κι όταν όλα φαίνονται «καλά», μπορεί να υπάρχει μέσα μας μια σιωπηλή ανάγκη για περισσότερο νόημα, σύνδεση και αλήθεια.</p>
-        <p class="rv" data-i="psy_p2">Η ψυχοθεραπεία είναι ένας χώρος όπου μπορεί κανείς να σταθεί για λίγο, να πάρει μια ανάσα και να στραφεί προς τον εσωτερικό του κόσμο <span class="hl">με ασφάλεια και χωρίς κριτική</span>. Είναι μια διαδικασία προσωπικής εξερεύνησης και ανάπτυξης που πραγματοποιείται μέσα σε μια σχέση εμπιστοσύνης, αποδοχής και σεβασμού.</p>
-        <p class="rv" data-i="psy_p3">Δεν αφορά μόνο περιόδους κρίσης ή έντονης ψυχικής δυσφορίας. Μπορεί να αποτελέσει μια πολύτιμη εμπειρία για όποιον επιθυμεί να γνωρίσει καλύτερα τον εαυτό του, να κατανοήσει βαθύτερα τα συναισθήματα και τις ανάγκες του, να βελτιώσει τις σχέσεις του ή να βρει νέους τρόπους να αντιμετωπίζει τις προκλήσεις της καθημερινότητας.</p>
-        <p class="rv" data-i="psy_p4">Μέσα από τη θεραπευτική διαδικασία δίνεται η δυνατότητα να φωτιστούν σκέψεις, συναισθήματα και μοτίβα που συχνά λειτουργούν αυτόματα· να κατανοήσουμε καλύτερα τον τρόπο που σχετιζόμαστε με τον εαυτό μας και τους άλλους, να αναγνωρίσουμε τι πραγματικά έχει αξία για εμάς και να αναζητήσουμε πιο αυθεντικούς τρόπους έκφρασης και σύνδεσης. Σταδιακά, η αυτογνωσία γίνεται βαθύτερη, η ψυχική ανθεκτικότητα ενισχύεται και δημιουργείται περισσότερος χώρος για επιλογές που ανταποκρίνονται στις πραγματικές μας ανάγκες.</p>
-        <blockquote class="pq seferis rv">
-          <p data-i="q2">Το σπουδαίο δεν είναι ν’ αλλάξουμε τη ζωή μας, ονειροπολώντας μιαν «άλλη», αλλά να κάνουμε να λαλήσει τούτη η ζωή, όπως μας δόθηκε, την καθημερινή, την ταπεινή, την ανθρώπινη, όπου το καθετί που μπορούσε να γυρέψουμε πρέπει να υπάρχει.</p>
-          <cite data-i="q2w">Γιώργος Σεφέρης</cite>
-        </blockquote>
-      </div>
-    </div>
+    <p class="bigq rv" data-i="q1">Συμβαίνει να είμαστε πλάσματα γεμάτα φόβους και ψιλοδουλεμένες άμυνες. Φοβόμαστε ακόμα και την αληθινή χαρά, την ευτυχία και, ίσως περισσότερο, τη βαθιά αγάπη. Για διάφορους λόγους τις αποφεύγουμε και βάζουμε στη θέση τους στόχους και επιλογές που νιώθουμε ότι ελέγχουμε καλύτερα. Κρύβει όμως μεγάλη θλίψη και κατάθλιψη η αποφυγή της αυθεντικής, της ζωντανής ζωής.</p>
+    <div class="qwho rv d2" data-i="q1w">Μάρω Βαμβουνάκη</div>
   </div>
 </section>
 
@@ -498,23 +400,41 @@ footer{background:#2E1A0B;color:rgba(242,243,239,.6);padding:60px clamp(22px,5vw
     <div class="tulip draw light" style="right:8%;bottom:10%;width:90px;height:170px;transform:scaleX(-1)" data-speed="-0.1"><svg viewBox="0 0 120 220" preserveAspectRatio="xMidYMax meet"><path d="M60 218 C58 180 55 150 50 120 C46 96 44 78 45 62 M45 62 C40 52 34 48 30 52 C26 56 30 64 38 66 C44 67 45 64 45 62 Z M45 62 C50 52 56 48 60 52 C64 56 60 64 52 66 C46 67 45 64 45 62 M45 62 C45 54 46 46 49 41 C52 36 57 35 59 39 C61 43 57 50 51 55 M60 218 C50 176 30 150 16 138 C6 129 4 118 8 112 M60 218 C56 172 44 138 34 118 M60 218 C66 176 82 146 96 132 C106 122 108 112 104 106 M60 218 C64 174 76 144 86 126"/></svg></div>
   </div>
   <div class="wrap">
-    <div class="bio-grid">
-      <div class="bio-photo rv-l">
-      <div class="pframe" onclick="openLB()" role="button" tabindex="0" aria-label="Μεγέθυνση φωτογραφίας" onkeydown="if(event.key==='Enter')openLB()">
-        <img id="portrait" src="https://raw.githubusercontent.com/agelmet/MALAPETSA/refs/heads/main/picture.png" alt="Μαρία Μαλαπέτσα — Συστημική Ψυχοθεραπεύτρια" width="1254" height="1254" loading="lazy">
+    <div class="bio-head">
+      <span class="eyebrow rv" data-i="bio_eye">Βιογραφικό</span>
+      <h2 class="title rv d1" data-i="bio_t">Λίγα λόγια για εμένα</h2>
+      <div class="tline"></div>
+    </div>
+
+    <div class="bio-hero">
+      <div class="b-first rv-l">
+        <p class="intro right" data-i="bio_p1">Είμαι Συστημική Ψυχοθεραπεύτρια και στόχος μου είναι να δημιουργώ μια θεραπευτική σχέση εμπιστοσύνης, μέσα στην οποία κάθε άνθρωπος μπορεί να προχωρήσει με τον δικό του ρυθμό προς μια πιο ισορροπημένη και ουσιαστική ζωή.</p>
+        <div class="signoff right">
+          <span data-i="brand_n">Μαρία Μαλαπέτσα</span>
+          <span class="role" data-i="bio_role">Συστημική Ψυχοθεραπεύτρια</span>
+        </div>
+      </div>
+
+      <div class="pframe rv-scale" onclick="openLB()" role="button" tabindex="0" aria-label="Μεγέθυνση φωτογραφίας" onkeydown="if(event.key==='Enter')openLB()">
+        <img id="portrait" src="https://raw.githubusercontent.com/agelmet/MALAPETSA/refs/heads/main/picture.png" alt="Μαρία Μαλαπέτσα — Συστημική Ψυχοθεραπεύτρια" loading="lazy">
         <span class="zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5L21 21M11 8v6M8 11h6"/></svg></span>
       </div>
+
+      <div class="b-last rv-r">
+        <p class="intro" data-i="bio_places">Από το 2023 διατηρώ ιδιωτικό γραφείο στα Ιλίσια, όπου προσφέρω έναν χώρο εμπιστοσύνης — δια ζώσης και διαδικτυακά.</p>
+        <div class="signoff">
+          <span data-i="bio_place2">Ιλίσια · Αθήνα</span>
+          <span class="role" data-i="bio_role2">Μέλος ΕΛ.Ε.ΣΥ.Θ.</span>
+        </div>
       </div>
-      <div class="bio-text">
-        <span class="eyebrow rv" data-i="bio_eye">Βιογραφικό</span>
-        <h2 class="title rv d1" data-i="bio_t">Λίγα λόγια για μένα</h2>
-        <div class="tline"></div>
-        <div class="bio-body">
-          <p class="rv" data-i="bio_p2">Έχω αποφοιτήσει από το Τμήμα Φιλοσοφίας, Παιδαγωγικής και Ψυχολογίας (με Κατεύθυνση Ψυχολογίας) του Εθνικού και Καποδιστριακού Πανεπιστημίου Αθηνών, ενώ παράλληλα κατέχω Bachelor στην Κλινική Ψυχολογία από το University of Central Lancashire. Έχω ολοκληρώσει μεταπτυχιακές σπουδές στο Πάντειο Πανεπιστήμιο με ειδίκευση στον Κοινωνικό Αποκλεισμό και τις Μειονότητες και Κατεύθυνση Ψυχολογίας — ένα πεδίο που ενίσχυσε βαθιά την ευαισθησία μου γύρω από ζητήματα ταυτότητας, κοινωνικών ανισοτήτων και ψυχολογικής επιβάρυνσης ευάλωτων πληθυσμών.</p>
-          <p class="rv" data-i="bio_p3">Εκπαιδεύτηκα στη Συστημική Ψυχοθεραπεία στο Αθηναϊκό Κέντρο Μελέτης του Ανθρώπου, μέσα από την οποία προσεγγίζω τον άνθρωπο στο ευρύτερο πλαίσιο των σχέσεων και των συστημάτων στα οποία ανήκει. Παράλληλα, έχω εκπαιδευτεί σε σύγχρονες θεραπευτικές προσεγγίσεις όπως η Συγκινησιακά Εστιασμένη Θεραπεία (EFT), η Συμπονετική Διερεύνηση (Compassion Focused Approaches) και το Mindfulness — εργαλεία που ενισχύουν την κατανόηση, τη ρύθμιση του συναισθήματος και την ανάπτυξη μιας πιο συμπονετικής σχέσης με τον εαυτό.</p>
-          <p class="rv" data-i="bio_p4">Ιδιαίτερο ενδιαφέρον για εμένα αποτελούν το τραύμα και το πένθος, οι αγχώδεις και καταθλιπτικές δυσκολίες, οι κρίσεις πανικού, καθώς και τα ψυχοσωματικά συμπτώματα που συχνά εκφράζουν βαθύτερες συναισθηματικές ανάγκες. Με απασχολούν επίσης οι δυσκολίες στις διαπροσωπικές σχέσεις και οι οικογενειακές δυναμικές, όπως και η ενδυνάμωση του ατόμου μέσα από μια διαδικασία προσωπικής ανάπτυξης και αυτογνωσίας.</p>
-          <p class="rv" data-i="bio_p5">Έχω εκπαιδευτεί στη χορήγηση και αξιολόγηση των ψυχομετρικών εργαλείων MMPI®-2 και MMPI®-3 και είμαι μέλος της Ελληνικής Εταιρείας Συστημικής Θεραπείας. Η επαγγελματική μου εμπειρία περιλαμβάνει συμμετοχή σε ερευνητικά και εκπαιδευτικά προγράμματα, καθώς και παροχή συμβουλευτικής και ψυχολογικής υποστήριξης σε ευάλωτες κοινωνικές ομάδες. Από το 2023 διατηρώ ιδιωτικό γραφείο στα Ιλίσια, όπου παρέχω ατομικές, ομαδικές, οικογενειακές συνεδρίες και θεραπεία ζευγαριών, τόσο δια ζώσης όσο και διαδικτυακά.</p>
-          <div class="chips rv">
+    </div>
+
+    <div class="bio-body">
+      <p class="rv" data-i="bio_p2">Έχω αποφοιτήσει από το Τμήμα Φιλοσοφίας, Παιδαγωγικής και Ψυχολογίας (με Κατεύθυνση Ψυχολογίας) του Εθνικού και Καποδιστριακού Πανεπιστημίου Αθηνών, ενώ παράλληλα κατέχω Bachelor στην Κλινική Ψυχολογία από το University of Central Lancashire. Έχω ολοκληρώσει μεταπτυχιακές σπουδές στο Πάντειο Πανεπιστήμιο με ειδίκευση στον Κοινωνικό Αποκλεισμό και τις Μειονότητες και Κατεύθυνση Ψυχολογίας — ένα πεδίο που ενίσχυσε βαθιά την ευαισθησία μου γύρω από ζητήματα ταυτότητας, κοινωνικών ανισοτήτων και ψυχολογικής επιβάρυνσης ευάλωτων πληθυσμών.</p>
+      <p class="rv" data-i="bio_p3">Εκπαιδεύτηκα στη Συστημική Ψυχοθεραπεία στο Αθηναϊκό Κέντρο Μελέτης του Ανθρώπου, μέσα από την οποία προσεγγίζω τον άνθρωπο στο ευρύτερο πλαίσιο των σχέσεων και των συστημάτων στα οποία ανήκει. Παράλληλα, έχω εκπαιδευτεί σε σύγχρονες θεραπευτικές προσεγγίσεις όπως η Συγκινησιακά Εστιασμένη Θεραπεία (EFT), η Συμπονετική Διερεύνηση (Compassion Focused Approaches) και το Mindfulness — εργαλεία που ενισχύουν την κατανόηση, τη ρύθμιση του συναισθήματος και την ανάπτυξη μιας πιο συμπονετικής σχέσης με τον εαυτό.</p>
+      <p class="rv" data-i="bio_p4">Ιδιαίτερο ενδιαφέρον για εμένα αποτελούν το τραύμα και το πένθος, οι αγχώδεις και καταθλιπτικές δυσκολίες, οι κρίσεις πανικού, καθώς και τα ψυχοσωματικά συμπτώματα που συχνά εκφράζουν βαθύτερες συναισθηματικές ανάγκες. Με απασχολούν επίσης οι δυσκολίες στις διαπροσωπικές σχέσεις και οι οικογενειακές δυναμικές, όπως και η ενδυνάμωση του ατόμου μέσα από μια διαδικασία προσωπικής ανάπτυξης και αυτογνωσίας.</p>
+      <p class="rv" data-i="bio_p5">Έχω εκπαιδευτεί στη χορήγηση και αξιολόγηση των ψυχομετρικών εργαλείων MMPI®-2 και MMPI®-3 και είμαι μέλος της Ελληνικής Εταιρείας Συστημικής Θεραπείας. Η επαγγελματική μου εμπειρία περιλαμβάνει συμμετοχή σε ερευνητικά και εκπαιδευτικά προγράμματα, καθώς και παροχή συμβουλευτικής και ψυχολογικής υποστήριξης σε ευάλωτες κοινωνικές ομάδες. Από το 2023 διατηρώ ιδιωτικό γραφείο στα Ιλίσια, όπου παρέχω ατομικές, ομαδικές, οικογενειακές συνεδρίες και θεραπεία ζευγαριών, τόσο δια ζώσης όσο και διαδικτυακά.</p>
+      <div class="chips rv">
         <span class="chip" data-i="chip_ekpa">ΕΚΠΑ</span>
         <span class="chip">BSc Clinical Psychology · UCLan</span>
         <span class="chip" data-i="chip_msc">MSc · Πάντειο Πανεπιστήμιο</span>
@@ -525,13 +445,35 @@ footer{background:#2E1A0B;color:rgba(242,243,239,.6);padding:60px clamp(22px,5vw
         <span class="chip">MMPI®-2 / MMPI®-3</span>
         <span class="chip" data-i="chip_elesyth">Μέλος ΕΛ.Ε.ΣΥ.Θ.</span>
       </div>
-        </div>
+    </div>
+  </div>
+</section>
+
+<section id="psy">
+  <div class="wrap">
+    <div class="psy-grid">
+      <div class="psy-left rv-l">
+        <span class="eyebrow" data-i="psy_eye">Η Ψυχοθεραπεία</span>
+        <h2 class="title" data-i="psy_t">Ένας χώρος για να ανασάνεις</h2>
+        <div class="tline"></div>
+        <p class="lead" data-i="psy_lead">Μια διαδικασία προσωπικής εξερεύνησης, μέσα σε μια σχέση εμπιστοσύνης, αποδοχής και σεβασμού.</p>
+      </div>
+      <div class="psy-right">
+        <p class="rv" data-i="psy_p1">Πολλές φορές στη ζωή μας νιώθουμε ότι κάτι μας βαραίνει, χωρίς να μπορούμε πάντα να το εξηγήσουμε. Άλλες φορές επαναλαμβάνουμε τις ίδιες δυσκολίες στις σχέσεις μας, παλεύουμε με το άγχος, την αβεβαιότητα ή την αίσθηση ότι έχουμε απομακρυνθεί από τον εαυτό μας. Και κάποιες φορές, ακόμη κι όταν όλα φαίνονται «καλά», μπορεί να υπάρχει μέσα μας μια σιωπηλή ανάγκη για περισσότερο νόημα, σύνδεση και αλήθεια.</p>
+        <p class="rv" data-i="psy_p2">Η ψυχοθεραπεία είναι ένας χώρος όπου μπορεί κανείς να σταθεί για λίγο, να πάρει μια ανάσα και να στραφεί προς τον εσωτερικό του κόσμο <span class="hl">με ασφάλεια και χωρίς κριτική</span>. Είναι μια διαδικασία προσωπικής εξερεύνησης και ανάπτυξης που πραγματοποιείται μέσα σε μια σχέση εμπιστοσύνης, αποδοχής και σεβασμού.</p>
+        <p class="rv" data-i="psy_p3">Δεν αφορά μόνο περιόδους κρίσης ή έντονης ψυχικής δυσφορίας. Μπορεί να αποτελέσει μια πολύτιμη εμπειρία για όποιον επιθυμεί να γνωρίσει καλύτερα τον εαυτό του, να κατανοήσει βαθύτερα τα συναισθήματα και τις ανάγκες του, να βελτιώσει τις σχέσεις του ή να βρει νέους τρόπους να αντιμετωπίζει τις προκλήσεις της καθημερινότητας.</p>
+        <p class="rv" data-i="psy_p4">Μέσα από τη θεραπευτική διαδικασία δίνεται η δυνατότητα να φωτιστούν σκέψεις, συναισθήματα και μοτίβα που συχνά λειτουργούν αυτόματα· να κατανοήσουμε καλύτερα τον τρόπο που σχετιζόμαστε με τον εαυτό μας και τους άλλους, να αναγνωρίσουμε τι πραγματικά έχει αξία για εμάς και να αναζητήσουμε πιο αυθεντικούς τρόπους έκφρασης και σύνδεσης. Σταδιακά, η αυτογνωσία γίνεται βαθύτερη, η ψυχική ανθεκτικότητα ενισχύεται και δημιουργείται περισσότερος χώρος για επιλογές που ανταποκρίνονται στις πραγματικές μας ανάγκες.</p>
       </div>
     </div>
   </div>
 </section>
 
-
+<section class="quote-band seferis">
+  <div class="wrap">
+    <p class="bigq rv" data-i="q2">Το σπουδαίο δεν είναι ν’ αλλάξουμε τη ζωή μας, ονειροπολώντας μιαν «άλλη», αλλά να κάνουμε να λαλήσει τούτη η ζωή, όπως μας δόθηκε, την καθημερινή, την ταπεινή, την ανθρώπινη, όπου το καθετί που μπορούσε να γυρέψουμε πρέπει να υπάρχει.</p>
+    <div class="qwho rv d2" data-i="q2w">Γιώργος Σεφέρης</div>
+  </div>
+</section>
 
 <section class="sys-bg">
   <div class="wrap">
@@ -552,7 +494,10 @@ footer{background:#2E1A0B;color:rgba(242,243,239,.6);padding:60px clamp(22px,5vw
         <p data-i="conf_p2">Όλες οι διαδικασίες συμμορφώνονται με τον Κώδικα Δεοντολογίας του επαγγέλματος και τη νομοθεσία περί προστασίας προσωπικών δεδομένων. Η άρση του απορρήτου προβλέπεται μόνο σε εξαιρετικές περιπτώσεις, όταν κρίνεται απαραίτητη για την προστασία της ζωής ή της σωματικής ακεραιότητας του ίδιου του ατόμου ή άλλων προσώπων.</p>
       </article>
     </div>
-    
+    <div class="invite rv">
+      <p data-i="inv_p">Αν διαβάζεις αυτές τις γραμμές, ίσως κάτι μέσα σου αναζητά κατανόηση, ανακούφιση ή αλλαγή. Η αναζήτηση βοήθειας δεν είναι ένδειξη αδυναμίας· είναι μια πράξη φροντίδας, θάρρους και βαθύτερης σύνδεσης με τον εαυτό σου.</p>
+      <a href="#contact" class="btn btn-dark" data-i="inv_cta">Κάνε το πρώτο βήμα</a>
+    </div>
   </div>
 </section>
 
@@ -631,7 +576,7 @@ footer{background:#2E1A0B;color:rgba(242,243,239,.6);padding:60px clamp(22px,5vw
       <svg viewBox="0 0 64 64" fill="none" aria-hidden="true" style="width:48px;height:48px"><circle cx="26" cy="32" r="14" stroke="#E0A24A" stroke-width="2"/><circle cx="38" cy="32" r="14" stroke="#C98B45" stroke-width="2"/><circle cx="32" cy="32" r="2.6" fill="#FBF4E9"/></svg>
       <span>
         <span class="bn" data-i="brand_n">Μαρία Μαλαπέτσα</span><br>
-        <span class="bt" data-i="brand_t2">Συστημική Ψυχοθεραπεία</span>
+        <span class="bt" data-i="brand_t2">Συστημικη Ψυχοθεραπεια</span>
       </span>
     </a>
     <div class="f-links">
@@ -666,17 +611,12 @@ const EN = {
  h_n1: 'Maria', h_n2: 'Malapetsa',
  brand_t:'Systemic Psychotherapy', brand_t2:'Systemic Psychotherapy',
  nav1:'Psychotherapy', nav2:'About', nav3:'Services', nav4:'Reviews', nav5:'Contact',
- h_eye:'Maria Malapetsa · Systemic Psychotherapist',
- h_q:'Strength is not the absence of fear — it is moving forward with your fear, and your truth',
- wel_p1:'Psychotherapy is a process of personal exploration, within a relationship of trust, acceptance and respect.',
- wel_p2:'My aim is to create a therapeutic relationship of trust, within which every person can move at their own pace toward a more balanced and meaningful life.',
- wel_r1:'Systemic Psychotherapist', wel_r2:'Mental Health Counsellor',
- psy_sub:'A space to breathe',
+ h_eye:'Systemic Psychotherapist · Mental Health Counsellor',
  h_sub:'Strength is not the absence of fear — it is moving forward with your fear, and your truth.',
  h_cta1:'Book a session', h_cta2:'What is psychotherapy', h_scroll:'Scroll',
  q1:'We happen to be creatures full of fears and finely crafted defences. We fear even true joy, happiness and, perhaps most of all, deep love. For various reasons we avoid them, replacing them with goals and choices we feel we can better control. Yet avoiding an authentic, living life conceals great sorrow and depression.',
  q1w:'Maro Vamvounaki',
- psy_eye:'Psychotherapy', psy_t:'Psychotherapy',
+ psy_eye:'Psychotherapy', psy_t:'A space to breathe',
  psy_lead:'A process of personal exploration, held within a relationship of trust, acceptance and respect.',
  psy_p1:'There are times in life when we feel that something weighs on us, without always being able to explain it. At other times we repeat the same difficulties in our relationships, struggle with anxiety, uncertainty, or the sense that we have drifted away from ourselves. And sometimes, even when everything seems “fine”, there may be a quiet need within us for more meaning, connection and truth.',
  psy_p2:'Psychotherapy is a space where one can pause for a while, take a breath, and turn toward their inner world <span class="hl">safely and without judgement</span>. It is a process of personal exploration and growth that unfolds within a relationship of trust, acceptance and respect.',
@@ -768,14 +708,9 @@ function setLang(l){
   document.querySelectorAll('.lang-en').forEach(b=>b.classList.toggle('on', l==='en'));
   
   setYear(); 
-  buildMarquee(); splitQuote();
+  buildMarquee();
 }
 
-function splitQuote(){
-  const q=document.querySelector('h1.hquote'); if(!q) return;
-  const words=q.textContent.trim().split(/\s+/);
-  q.innerHTML=words.map((w,i)=>`<span class="w" style="animation-delay:${(.25+i*.045).toFixed(3)}s">${w}</span>`).join(' ');
-}
 function setYear(){
   const y = new Date().getFullYear();
   const el = document.getElementById('yr'); if(el) el.textContent = y;
@@ -844,14 +779,14 @@ function buildMarquee(){
       for(let j=i+1;j<nodes.length;j++){
         const a=nodes[i],b=nodes[j],d=Math.hypot(a.x-b.x,a.y-b.y);
         if(d<link){
-          ctx.strokeStyle=`rgba(110,53,16,${(1-d/link)*.22})`;
+          ctx.strokeStyle=`rgba(224,170,110,${(1-d/link)*.34})`;
           ctx.lineWidth=devicePixelRatio*.6;
           ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();
         }
       }
     }
     for(const p of nodes){
-      ctx.fillStyle='rgba(90,42,12,.42)';
+      ctx.fillStyle='rgba(243,197,126,.85)';
       ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,7);ctx.fill();
     }
     if(!reduced) requestAnimationFrame(frame);
@@ -933,7 +868,7 @@ if(bioPar && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
 }
 
 /* ============ init ============ */
-setYear(); buildMarquee(); splitQuote();
+setYear(); buildMarquee();
 </script>
 </body>
 </html>
