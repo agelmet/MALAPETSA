@@ -492,55 +492,6 @@ footer .brand .bt{color:#8A3F0F}
   .hero-in{padding-top:108px;padding-bottom:40px}
   header{min-height:0}
 }
-
-/* ================= client round 28 Sept 2026 ================= */
-html{overflow-x:clip}
-/* one continuous yellow first screen: quote across the full width, the leaves photo melting into the same yellow,
-   text + signature + buttons all visible without scrolling */
-header#hero{min-height:calc(100svh + 110px);align-items:stretch;
-  background:
-   radial-gradient(62% 78% at 100% 100%,rgba(221,94,24,.92) 0%,rgba(239,138,38,.62) 26%,rgba(247,178,50,.26) 50%,rgba(253,219,90,0) 74%),
-   linear-gradient(180deg,#F5E6C8 0%,#F9DE8E 120px,#FDDB5A 300px,#FDDB5A 100%)}
-header#hero .dawn-glow{opacity:.55}
-header#hero::after{z-index:3}
-.hero-in{display:flex;flex-direction:column;align-items:stretch;justify-content:center;text-align:left;
-  max-width:1180px;padding:clamp(92px,13svh,128px) clamp(22px,5vw,64px) calc(110px + clamp(26px,5svh,56px));gap:clamp(20px,4.2svh,44px)}
-.hero-top{display:flex;flex-direction:column;align-items:center;text-align:center}
-.hero-top .hero-eyebrow::after{content:'';width:44px;height:1px;background:#6E3510}
-h1.hquote{max-width:none;font-size:clamp(1.18rem,1.75vw,1.72rem);line-height:1.3;margin:clamp(10px,1.8svh,16px) 0 0}
-.hero-top .hero-line{margin:clamp(12px,2.2svh,20px) auto 0;background:linear-gradient(90deg,transparent,#3A2412,transparent)}
-@keyframes grow{to{width:min(260px,40%)}}
-.hero-wel{max-width:1080px;margin:0 auto;width:100%;gap:clamp(32px,4.5vw,72px)}
-.hero-wel .wel-img{justify-content:flex-end;opacity:0;animation:rise 1.2s var(--ease) .55s forwards}
-.hero-wel .wel-img img{border-radius:0;box-shadow:none;max-height:min(52svh,470px);
-  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 11%,#000 89%,transparent 100%),linear-gradient(180deg,transparent 0,#000 7%,#000 97%,transparent 100%);
-  -webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent 0,#000 11%,#000 89%,transparent 100%),linear-gradient(180deg,transparent 0,#000 7%,#000 97%,transparent 100%);mask-composite:intersect}
-.hero-wel .wel-txt{opacity:0;animation:rise 1.2s var(--ease) .8s forwards}
-.hero-wel .wel-txt p{font-size:clamp(1.02rem,.5vw + 1.45svh,1.32rem);line-height:1.5;margin-bottom:.7em}
-.hero-wel .wel-sign{border-top-color:rgba(58,36,18,.22);color:#6E3510;margin-top:12px;padding-top:12px}
-.hero-wel .wel-sign span{color:#6E3510}.hero-wel .wel-sign .nm{color:var(--ink)}
-.hero-wel .hero-cta{justify-content:flex-start;margin-top:clamp(16px,2.6svh,26px);opacity:1;animation:none}
-.hero-wel .hero-cta{gap:14px;flex-wrap:wrap}
-.hero-wel .btn{padding:13px 24px;font-size:.74rem;letter-spacing:.13em}
-.hero-fade{position:absolute;left:0;right:0;bottom:0;height:130px;background:linear-gradient(180deg,rgba(243,231,218,0),#F3E7DA);pointer-events:none;z-index:1}
-.welcome > .wrap{padding-top:clamp(40px,6vw,72px)}
-.welcome .invite{margin-top:0}
-@media(max-width:980px){
-  .hero-wel .wel-img{justify-content:center}
-  .hero-wel .wel-img img{max-height:none;width:min(100%,560px)}
-  .hero-wel .wel-txt{text-align:left}
-}
-@media(max-width:560px){
-  header#hero{min-height:0}
-  .hero-in{padding-top:104px;padding-bottom:120px;gap:18px}
-  .hero-wel .wel-img img{width:84%}
-  .hero-top .hero-eyebrow{font-size:.66rem;letter-spacing:.2em}
-  .hero-top .hero-eyebrow::before,.hero-top .hero-eyebrow::after{display:none}
-  h1.hquote{font-size:1.2rem}
-  .hero-wel{gap:14px}
-  .hero-wel .btn{padding:13px 22px;font-size:.72rem;letter-spacing:.12em}
-  .hero-wel .hero-cta{gap:10px}
-}
 </style>
 </head>
 <body>
@@ -591,33 +542,31 @@ h1.hquote{max-width:none;font-size:clamp(1.18rem,1.75vw,1.72rem);line-height:1.3
   <svg class="dawn-arc" viewBox="0 0 1000 1000" aria-hidden="true"><circle cx="500" cy="500" r="330"/><circle class="inner" cx="500" cy="500" r="250"/></svg>
   <canvas id="web" aria-hidden="true"></canvas>
   <div class="hero-in">
-    <div class="hero-top">
-      <span class="hero-eyebrow" data-i="h_eye">Μαρία Μαλαπέτσα · Συστημική Ψυχοθεραπεύτρια</span>
-      <h1 class="hquote" data-i="h_q">Η δύναμη δεν είναι να μην φοβάσαι — είναι να προχωράς με τον φόβο και την αλήθειά σου</h1>
-      <div class="hero-line"></div>
+    <span class="hero-eyebrow" data-i="h_eye">Μαρία Μαλαπέτσα · Συστημική Ψυχοθεραπεύτρια</span>
+    <h1 class="hquote" data-i="h_q">Η δύναμη δεν είναι να μην φοβάσαι — είναι να προχωράς με τον φόβο και την αλήθειά σου</h1>
+    <div class="hero-line"></div>
+    <div class="hero-cta">
+      <a href="#contact" class="btn btn-brass" data-i="h_cta1">Κλείστε συνεδρία</a>
+      <a href="#psy" class="btn btn-ghost" data-i="h_cta2">Τι είναι η ψυχοθεραπεία</a>
     </div>
-      <div class="wel-grid hero-wel">
-        <figure class="wel-img"><img src="assets/home-leaves.jpg?v=2" width="1600" height="1054" alt="Δύο πρόσωπα από φθινοπωρινά φύλλα, το ένα απέναντι στο άλλο" fetchpriority="high" decoding="async"></figure>
-        <div class="wel-txt">
-          <p data-i="wel_p1">Η Ψυχοθεραπεία είναι μια διαδικασία προσωπικής εξερεύνησης, μέσα σε μια σχέση εμπιστοσύνης, αποδοχής και σεβασμού.</p>
-          <p data-i="wel_p2">Στόχος μου είναι να δημιουργώ μια θεραπευτική σχέση εμπιστοσύνης, μέσα στην οποία κάθε άνθρωπος μπορεί να προχωρήσει με τον δικό του ρυθμό προς μια πιο ισορροπημένη και ουσιαστική ζωή.</p>
-          <div class="wel-sign">
-            <span class="nm" data-i="brand_n">Μαρία Μαλαπέτσα</span>
-            <span data-i="wel_r1">Συστημική Ψυχοθεραπεύτρια</span>
-            <span data-i="wel_r2">Σύμβουλος Ψυχικής Υγείας</span>
-          </div>
-          <div class="hero-cta">
-            <a href="#contact" class="btn btn-brass" data-i="h_cta1">Κλείστε συνεδρία</a>
-            <a href="#psy" class="btn btn-ghost" data-i="h_cta2">Τι είναι η ψυχοθεραπεία</a>
-          </div>
-        </div>
-      </div>
   </div>
-  <div class="hero-fade" aria-hidden="true"></div>
+  <div class="scroll-hint" data-i="h_scroll">Κύλιση</div>
 </header>
 
 <section class="welcome" id="arxiki">
   <div class="wrap">
+    <div class="wel-grid">
+      <figure class="wel-img rv-l"><img src="assets/home-leaves.jpg?v=2" width="1600" height="1054" alt="Δύο πρόσωπα από φθινοπωρινά φύλλα, το ένα απέναντι στο άλλο" fetchpriority="high" decoding="async"></figure>
+      <div class="wel-txt rv-r">
+        <p data-i="wel_p1">Η Ψυχοθεραπεία είναι μια διαδικασία προσωπικής εξερεύνησης, μέσα σε μια σχέση εμπιστοσύνης, αποδοχής και σεβασμού.</p>
+        <p data-i="wel_p2">Στόχος μου είναι να δημιουργώ μια θεραπευτική σχέση εμπιστοσύνης, μέσα στην οποία κάθε άνθρωπος μπορεί να προχωρήσει με τον δικό του ρυθμό προς μια πιο ισορροπημένη και ουσιαστική ζωή.</p>
+        <div class="wel-sign">
+          <span class="nm" data-i="brand_n">Μαρία Μαλαπέτσα</span>
+          <span data-i="wel_r1">Συστημική Ψυχοθεραπεύτρια</span>
+          <span data-i="wel_r2">Σύμβουλος Ψυχικής Υγείας</span>
+        </div>
+      </div>
+    </div>
     <div class="invite rv">
       <p data-i="inv_p">Αν διαβάζεις αυτές τις γραμμές, ίσως κάτι μέσα σου αναζητά κατανόηση, ανακούφιση ή αλλαγή. Η αναζήτηση βοήθειας δεν είναι ένδειξη αδυναμίας· είναι μια πράξη φροντίδας, θάρρους και βαθύτερης σύνδεσης με τον εαυτό σου.</p>
       <a href="#contact" class="btn btn-dark" data-i="inv_cta">Κάνε το πρώτο βήμα</a>
